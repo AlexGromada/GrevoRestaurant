@@ -1,0 +1,208 @@
+@use "../common/breakpoints" as *;
+@use "../common/variables" as *;
+@use "../common/fonts" as *;
+@use "../common/common" as *;
+@use "../common/mixins" as *;
+
+.food-menu-container {
+    background: $main-bg;
+
+    padding: {
+        top: 90px;
+        bottom: 180px;
+    }
+
+    .food-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        &__list {
+            background-color: $secondary-alt-bg;
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            position: sticky;
+            top: 185px;
+
+            padding: 30px 40px 60px 40px;
+            border: 5px solid #4b3b32;
+            border-radius: 0 0 52px 52px;
+            box-sizing: border-box;
+
+            &-item {
+                @include font-nav;
+                background-color: $main-alt-bg;
+                width: 250px;
+                cursor: pointer;
+                height: 70px;
+                border-radius: 18px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.8s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.05);
+                    box-shadow: 0 0 15px 0 $main-alt-bg;
+                }
+            }
+
+            & > .active {
+                background: $accent;
+            }
+
+            img {
+                display: none;
+            }
+        }
+
+        &__content {
+            padding: 0 80px;
+            display: flex;
+            flex-flow: row;
+            gap: 50px 40px;
+            flex-wrap: wrap;
+        }
+    }
+
+    .hidden {
+        display: none;
+    }
+}
+
+@include respond($bp-xxl) {
+    .food-menu-container {
+        .food-menu {
+            &__list {
+                padding: 20px 30px 50px 30px;
+
+                &-item {
+                    width: 220px;
+                    height: 60px;
+                }
+            }
+
+            &__content {
+                padding: 0 40px;
+                gap: 40px 30px;
+            }
+        }
+    }
+}
+
+@include respond($bp-xl) {
+    .food-menu-container {
+        padding-top: 0;
+        .food-menu {
+            flex-direction: column;
+            justify-content: none;
+            gap: 50px;
+
+            &__list {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 20px;
+                top: 95px;
+                padding: 10px 30px 20px 30px;
+                border-top: 0;
+                border-radius: 0 0 52px 52px;
+
+                &-item {
+                    width: 220px;
+                    height: 60px;
+                }
+            }
+
+            &__content {
+                padding: 0;
+                justify-content: center;
+                gap: 50px 40px;
+                flex-wrap: wrap;
+            }
+        }
+    }
+}
+
+@include respond($bp-lg) {
+    .food-menu-container {
+        .food-menu {
+            flex-direction: column;
+            gap: 70px;
+
+            &__list {
+                width: calc(100% + 120px);
+                display: flex;
+                justify-content: space-between;
+                margin-left: -60px;
+
+                padding: 10px 55px 15px 55px;
+                border-radius: 0 0 60px 60px;
+
+                &-item {
+                    display: none;
+                }
+
+                & > .active {
+                    display: flex;
+                }
+
+                img {
+                    display: block;
+                }
+            }
+
+            &__content {
+                gap: 40px 40px;
+            }
+        }
+    }
+}
+
+@include respond($bp-md) {
+    .food-menu-container {
+        .food-menu {
+            gap: 40px;
+
+            &__list {
+                width: calc(100% + 80px);
+                top: 75px;
+                margin-left: -40px;
+                padding: 10px 40px 15px 40px;
+            }
+
+            &__content {
+                gap: 40px 40px;
+            }
+        }
+    }
+}
+
+@include respond($bp-sm) {
+    .food-menu-container {
+        .food-menu {
+            gap: 30px;
+
+            &__list {
+                padding: 10px 40px 15px 40px;
+                border-radius: 0 0 30px 30px;
+
+                &-item {
+                    width: 160px;
+                    height: 45px;
+                }
+
+                img {
+                    width: 45px;
+                }
+            }
+
+            &__content {
+                gap: 40px 0;
+            }
+        }
+    }
+}

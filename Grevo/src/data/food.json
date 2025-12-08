@@ -1,0 +1,2481 @@
+[
+    {
+        "id": 1,
+        "type": "meal",
+        "name": "Garlic–Herb Chicken",
+        "description": "Tender chicken roasted with garlic, a delicate mix of herbs, and soft, fresh vegetables. Each piece is juicy and flavorful, offering a warm, comforting taste with savory notes balanced by the gentle richness of butter. The carrots and broccoli provide a subtle sweetness, while the herbs enhance the aroma, making every bite satisfying and aromatic.",
+        "image": "/garlic-herb-chicken.jpg",
+        "price": "155",
+        "ingredients": [
+            [
+                "Chicken breast",
+                "150g"
+            ],
+            [
+                "Garlic",
+                "6g"
+            ],
+            [
+                "Carrots",
+                "20g"
+            ],
+            [
+                "Broccoli",
+                "100g"
+            ],
+            [
+                "Butter",
+                "20g"
+            ],
+            [
+                "Herbs mix",
+                "3g"
+            ],
+            [
+                "Salt & pepper",
+                "1g"
+            ]
+        ],
+        "bestWith": [
+            5,
+            4,
+            2
+        ]
+    },
+    {
+        "id": 2,
+        "type": "salad",
+        "name": "Crispy Garden Salad",
+        "description": "Fresh, crisp greens tossed with juicy cucumbers, ripe tomatoes, and a delicate, mellow vinaigrette. Each bite offers a harmonious blend of textures and flavors, combining the subtle crunch of vegetables with the gentle herbal aroma of a carefully selected herb mix. Light and refreshing, this salad is perfectly balanced with a hint of olive oil, a touch of salt and pepper, and leaves a clean, invigorating finish on the palate.",
+        "image": "/crispy-garden-salad.jpg",
+        "price": "110",
+        "ingredients": [
+            [
+                "Lettuce",
+                "60g"
+            ],
+            [
+                "Cucumber",
+                "40g"
+            ],
+            [
+                "Tomatoes",
+                "40g"
+            ],
+            [
+                "Olive oil",
+                "10g"
+            ],
+            [
+                "Herbs mix",
+                "2g"
+            ],
+            [
+                "Salt & pepper",
+                "1g"
+            ]
+        ],
+        "bestWith": [
+            1,
+            3,
+            5
+        ]
+    },
+    {
+        "id": 3,
+        "type": "pizza",
+        "name": "Four Cheese Pizza",
+        "description": "A soft, golden crust generously layered with a creamy, harmonious blend of mozzarella, cheddar, parmesan, and cream cheese, enhanced with a delicate sprinkle of light herbs. Each slice offers a warm, comforting bite with rich, melty textures and a subtle, savory aroma. Finished with a gentle golden top and a touch of tomato sauce, this pizza delivers a perfectly balanced combination of flavors that is indulgent yet satisfying.",
+        "image": "/four-cheese-pizza.jpg",
+        "price": "185",
+        "ingredients": [
+            [
+                "Mozzarella",
+                "80g"
+            ],
+            [
+                "Cheddar",
+                "40g"
+            ],
+            [
+                "Parmesan",
+                "20g"
+            ],
+            [
+                "Cream cheese",
+                "30g"
+            ],
+            [
+                "Tomato sauce",
+                "40g"
+            ],
+            [
+                "Herbs mix",
+                "2g"
+            ]
+        ],
+        "bestWith": [
+            1,
+            2,
+            5
+        ]
+    },
+    {
+        "id": 4,
+        "type": "dessert",
+        "name": "Caramel Cream Tart",
+        "description": "A luscious caramel cream tart resting on a tender, buttery crust, lightly toasted to perfection. The sweet, velvety filling melds with gentle notes of butter and sugar, creating a rich yet balanced flavor. Each bite offers a smooth, silky texture with a subtle caramel aroma, delivering a comforting and indulgent dessert experience that is both satisfying and elegantly sweet.",
+        "image": "/caramel-cream-tart.jpg",
+        "price": "95",
+        "ingredients": [
+            [
+                "Caramel",
+                "40g"
+            ],
+            [
+                "Cream",
+                "60g"
+            ],
+            [
+                "Butter",
+                "20g"
+            ],
+            [
+                "Flour",
+                "30g"
+            ],
+            [
+                "Sugar",
+                "20g"
+            ],
+            [
+                "Salt",
+                "1g"
+            ]
+        ],
+        "bestWith": [
+            1,
+            3,
+            5
+        ]
+    },
+    {
+        "id": 5,
+        "type": "drink",
+        "name": "Mint Lemon Tea",
+        "description": "A soothing mint lemon tea, carefully brewed to combine the bright, zesty aroma of fresh lemon with the gentle, refreshing sweetness of mint leaves. Each sip delivers a warm, comforting sensation while subtly awakening the senses. Enhanced with a touch of honey, this drink balances citrus tang and herbal freshness, making it an invigorating yet calming beverage perfect for relaxing moments or a gentle pick-me-up.",
+        "image": "/mint-lemon-tea.jpg",
+        "price": "55",
+        "ingredients": [
+            [
+                "Tea",
+                "200g"
+            ],
+            [
+                "Lemon",
+                "20g"
+            ],
+            [
+                "Mint",
+                "4g"
+            ],
+            [
+                "Honey",
+                "15g"
+            ]
+        ],
+        "bestWith": [
+            1,
+            3,
+            4
+        ]
+    },
+    {
+        "id": 6,
+        "type": "meal",
+        "name": "Beef Stroganoff",
+        "description": "Tender strips of beef gently simmered in a rich, creamy mushroom sauce with sautéed onions. This hearty, savory dish delivers deep, comforting flavors with a subtle buttery aroma and velvety texture. Each bite combines the richness of cream and the earthy notes of mushrooms, creating a warm, satisfying meal that evokes classic home-cooked comfort while maintaining a delicate, balanced taste profile.",
+        "image": "/beef-stroganoff.jpg",
+        "price": "165",
+        "ingredients": [
+            [
+                "Beef",
+                "150g"
+            ],
+            [
+                "Mushrooms",
+                "60g"
+            ],
+            [
+                "Onion",
+                "40g"
+            ],
+            [
+                "Cream",
+                "50g"
+            ],
+            [
+                "Butter",
+                "20g"
+            ],
+            [
+                "Salt & pepper",
+                "2g"
+            ]
+        ],
+        "bestWith": [
+            2,
+            5,
+            4
+        ]
+    },
+    {
+        "id": 7,
+        "type": "meal",
+        "name": "Grilled Salmon",
+        "description": "A succulent salmon fillet perfectly grilled with fresh lemon and aromatic dill. Light and flavorful, each bite offers a delicate balance of citrus brightness and herbal notes, complemented by a subtle olive oil richness. This dish delivers a fresh, wholesome experience, with tender, flaky salmon that is both satisfying and elegant, making it a delightful choice for a refined yet comforting meal.",
+        "image": "/grilled-salmon.jpg",
+        "price": "175",
+        "ingredients": [
+            [
+                "Salmon",
+                "160g"
+            ],
+            [
+                "Lemon",
+                "20g"
+            ],
+            [
+                "Dill",
+                "3g"
+            ],
+            [
+                "Olive oil",
+                "15g"
+            ],
+            [
+                "Salt & pepper",
+                "2g"
+            ]
+        ],
+        "bestWith": [
+            2,
+            5,
+            13
+        ]
+    },
+    {
+        "id": 8,
+        "type": "meal",
+        "name": "Vegetable Stir-Fry",
+        "description": "A vibrant medley of fresh seasonal vegetables, lightly stir-fried in savory soy sauce and aromatic sesame oil. Crisp carrots, tender broccoli, and sweet bell peppers are combined with a hint of garlic, creating a colorful, flavorful dish. Balanced, wholesome, and satisfying, each bite delivers a perfect harmony of textures and natural vegetable sweetness, making it a healthy and delicious choice for a light yet nourishing meal.",
+        "image": "/vegetable-stirfry.jpg",
+        "price": "140",
+        "ingredients": [
+            [
+                "Broccoli",
+                "60g"
+            ],
+            [
+                "Carrots",
+                "40g"
+            ],
+            [
+                "Bell peppers",
+                "50g"
+            ],
+            [
+                "Soy sauce",
+                "15g"
+            ],
+            [
+                "Garlic",
+                "5g"
+            ],
+            [
+                "Sesame oil",
+                "10g"
+            ]
+        ],
+        "bestWith": [
+            5,
+            2,
+            14
+        ]
+    },
+    {
+        "id": 9,
+        "type": "meal",
+        "name": "Roast Duck",
+        "description": "Succulent duck, slow-roasted to perfection with golden, crispy skin and a rich, savory flavor. Infused with aromatic herbs and a touch of garlic, each bite delivers a perfectly balanced taste. Served with a subtle buttery finish, this dish combines indulgent texture and deep, comforting flavors, making it a sophisticated and satisfying main course that delights the senses and warms the palate.",
+        "image": "/roast-duck.jpg",
+        "price": "190",
+        "ingredients": [
+            [
+                "Duck",
+                "200g"
+            ],
+            [
+                "Garlic",
+                "6g"
+            ],
+            [
+                "Rosemary",
+                "3g"
+            ],
+            [
+                "Butter",
+                "20g"
+            ],
+            [
+                "Salt & pepper",
+                "2g"
+            ]
+        ],
+        "bestWith": [
+            5,
+            4,
+            15
+        ]
+    },
+    {
+        "id": 10,
+        "type": "meal",
+        "name": "Stuffed Bell Peppers",
+        "description": "Bell peppers filled with rice, minced meat, and herbs. Soft, savory, and hearty.",
+        "image": "/stuffed-peppers.jpg",
+        "price": "150",
+        "ingredients": [
+            [
+                "Bell peppers",
+                "120g"
+            ],
+            [
+                "Rice",
+                "60g"
+            ],
+            [
+                "Minced beef",
+                "80g"
+            ],
+            [
+                "Tomato sauce",
+                "40g"
+            ],
+            [
+                "Herbs mix",
+                "3g"
+            ]
+        ],
+        "bestWith": [
+            2,
+            5,
+            16
+        ]
+    },
+    {
+        "id": 11,
+        "type": "meal",
+        "name": "Pasta Carbonara",
+        "description": "Classic Italian pasta with creamy sauce, pancetta, and parmesan. Rich and comforting.",
+        "image": "/carbonara.jpg",
+        "price": "160",
+        "ingredients": [
+            [
+                "Spaghetti",
+                "100g"
+            ],
+            [
+                "Pancetta",
+                "50g"
+            ],
+            [
+                "Egg yolk",
+                "30g"
+            ],
+            [
+                "Parmesan",
+                "20g"
+            ],
+            [
+                "Black pepper",
+                "2g"
+            ]
+        ],
+        "bestWith": [
+            5,
+            2,
+            17
+        ]
+    },
+    {
+        "id": 12,
+        "type": "meal",
+        "name": "Chicken Curry",
+        "description": "Tender chicken simmered in spiced curry sauce. Warm, aromatic, and flavorful.",
+        "image": "/chicken-curry.jpg",
+        "price": "170",
+        "ingredients": [
+            [
+                "Chicken thigh",
+                "150g"
+            ],
+            [
+                "Curry paste",
+                "20g"
+            ],
+            [
+                "Coconut milk",
+                "80g"
+            ],
+            [
+                "Onion",
+                "40g"
+            ],
+            [
+                "Garlic",
+                "6g"
+            ]
+        ],
+        "bestWith": [
+            5,
+            2,
+            18
+        ]
+    },
+    {
+        "id": 13,
+        "type": "meal",
+        "name": "Lamb Chops",
+        "description": "Juicy lamb chops grilled with rosemary and garlic. Bold, savory, and aromatic.",
+        "image": "/lamb-chops.jpg",
+        "price": "185",
+        "ingredients": [
+            [
+                "Lamb chops",
+                "180g"
+            ],
+            [
+                "Garlic",
+                "6g"
+            ],
+            [
+                "Rosemary",
+                "3g"
+            ],
+            [
+                "Olive oil",
+                "15g"
+            ],
+            [
+                "Salt & pepper",
+                "2g"
+            ]
+        ],
+        "bestWith": [
+            5,
+            4,
+            19
+        ]
+    },
+    {
+        "id": 14,
+        "type": "meal",
+        "name": "Vegetable Lasagna",
+        "description": "Layers of pasta, vegetables, and creamy sauce baked to perfection. Comforting and hearty.",
+        "image": "/vegetable-lasagna.jpg",
+        "price": "160",
+        "ingredients": [
+            [
+                "Lasagna sheets",
+                "100g"
+            ],
+            [
+                "Zucchini",
+                "40g"
+            ],
+            [
+                "Spinach",
+                "40g"
+            ],
+            [
+                "Tomato sauce",
+                "60g"
+            ],
+            [
+                "Cheese mix",
+                "50g"
+            ]
+        ],
+        "bestWith": [
+            2,
+            5,
+            20
+        ]
+    },
+    {
+        "id": 15,
+        "type": "meal",
+        "name": "Shrimp Risotto",
+        "description": "Creamy risotto with fresh shrimp and herbs. Elegant, savory, and smooth.",
+        "image": "/shrimp-risotto.jpg",
+        "price": "175",
+        "ingredients": [
+            [
+                "Shrimp",
+                "100g"
+            ],
+            [
+                "Arborio rice",
+                "80g"
+            ],
+            [
+                "Onion",
+                "30g"
+            ],
+            [
+                "Butter",
+                "20g"
+            ],
+            [
+                "Parmesan",
+                "20g"
+            ]
+        ],
+        "bestWith": [
+            5,
+            2,
+            21
+        ]
+    },
+    {
+        "id": 16,
+        "type": "meal",
+        "name": "BBQ Ribs",
+        "description": "Slow-cooked pork ribs glazed with smoky BBQ sauce. Tender, juicy, and bold.",
+        "image": "/bbq-ribs.jpg",
+        "price": "185",
+        "ingredients": [
+            [
+                "Pork ribs",
+                "200g"
+            ],
+            [
+                "BBQ sauce",
+                "50g"
+            ],
+            [
+                "Garlic",
+                "6g"
+            ],
+            [
+                "Salt & pepper",
+                "2g"
+            ]
+        ],
+        "bestWith": [
+            5,
+            4,
+            22
+        ]
+    },
+    {
+        "id": 17,
+        "type": "meal",
+        "name": "Falafel Plate",
+        "description": "Crispy chickpea falafel served with hummus and pita. Nutty, earthy, and satisfying.",
+        "image": "/falafel.jpg",
+        "price": "145",
+        "ingredients": [
+            [
+                "Chickpeas",
+                "100g"
+            ],
+            [
+                "Garlic",
+                "6g"
+            ],
+            [
+                "Parsley",
+                "5g"
+            ],
+            [
+                "Tahini",
+                "20g"
+            ],
+            [
+                "Pita bread",
+                "60g"
+            ]
+        ],
+        "bestWith": [
+            2,
+            5,
+            23
+        ]
+    },
+    {
+        "id": 18,
+        "type": "meal",
+        "name": "Stuffed Eggplant",
+        "description": "Eggplant baked with minced meat, rice, and tomato sauce. Soft, savory, and rich.",
+        "image": "/stuffed-eggplant.jpg",
+        "price": "150",
+        "ingredients": [
+            [
+                "Eggplant",
+                "120g"
+            ],
+            [
+                "Minced beef",
+                "80g"
+            ],
+            [
+                "Rice",
+                "60g"
+            ],
+            [
+                "Tomato sauce",
+                "40g"
+            ],
+            [
+                "Herbs mix",
+                "3g"
+            ]
+        ],
+        "bestWith": [
+            2,
+            5,
+            24
+        ]
+    },
+    {
+        "id": 19,
+        "type": "meal",
+        "name": "Seafood Paella",
+        "description": "Spanish rice dish with shrimp, mussels, and saffron. Vibrant, aromatic, and festive.",
+        "image": "/paella.jpg",
+        "price": "190",
+        "ingredients": [
+            [
+                "Rice",
+                "100g"
+            ],
+            [
+                "Shrimp",
+                "60g"
+            ],
+            [
+                "Mussels",
+                "60g"
+            ],
+            [
+                "Saffron",
+                "2g"
+            ],
+            [
+                "Peas",
+                "40g"
+            ]
+        ],
+        "bestWith": [
+            5,
+            2,
+            25
+        ]
+    },
+    {
+        "id": 20,
+        "type": "meal",
+        "name": "Turkey Meatballs",
+        "description": "Juicy turkey meatballs simmered in tomato sauce. Light, savory, and comforting.",
+        "image": "/turkey-meatballs.jpg",
+        "price": "155",
+        "ingredients": [
+            [
+                "Turkey mince",
+                "150g"
+            ],
+            [
+                "Onion",
+                "30g"
+            ],
+            [
+                "Garlic",
+                "6g"
+            ],
+            [
+                "Tomato sauce",
+                "60g"
+            ],
+            [
+                "Breadcrumbs",
+                "20g"
+            ],
+            [
+                "Salt & pepper",
+                "2g"
+            ]
+        ],
+        "bestWith": [
+            2,
+            5,
+            26
+        ]
+    },
+    {
+        "id": 21,
+        "type": "meal",
+        "name": "Stuffed Cabbage Rolls",
+        "description": "Cabbage leaves filled with rice and minced meat, simmered in tomato sauce. Traditional and hearty.",
+        "image": "/cabbage-rolls.jpg",
+        "price": "150",
+        "ingredients": [
+            [
+                "Cabbage leaves",
+                "120g"
+            ],
+            [
+                "Rice",
+                "60g"
+            ],
+            [
+                "Minced pork",
+                "80g"
+            ],
+            [
+                "Tomato sauce",
+                "50g"
+            ],
+            [
+                "Herbs mix",
+                "3g"
+            ]
+        ],
+        "bestWith": [
+            2,
+            5,
+            27
+        ]
+    },
+    {
+        "id": 22,
+        "type": "meal",
+        "name": "Teriyaki Chicken",
+        "description": "Grilled chicken glazed with sweet teriyaki sauce. Balanced, savory-sweet, and aromatic.",
+        "image": "/teriyaki-chicken.jpg",
+        "price": "165",
+        "ingredients": [
+            [
+                "Chicken thigh",
+                "150g"
+            ],
+            [
+                "Teriyaki sauce",
+                "40g"
+            ],
+            [
+                "Sesame seeds",
+                "5g"
+            ],
+            [
+                "Spring onion",
+                "20g"
+            ],
+            [
+                "Garlic",
+                "6g"
+            ]
+        ],
+        "bestWith": [
+            2,
+            5,
+            28
+        ]
+    },
+    {
+        "id": 23,
+        "type": "meal",
+        "name": "Moussaka",
+        "description": "Greek layered dish with eggplant, minced lamb, and creamy béchamel. Rich, savory, and comforting.",
+        "image": "/moussaka.jpg",
+        "price": "180",
+        "ingredients": [
+            [
+                "Eggplant",
+                "100g"
+            ],
+            [
+                "Minced lamb",
+                "100g"
+            ],
+            [
+                "Onion",
+                "40g"
+            ],
+            [
+                "Tomato sauce",
+                "50g"
+            ],
+            [
+                "Béchamel sauce",
+                "60g"
+            ]
+        ],
+        "bestWith": [
+            2,
+            5,
+            29
+        ]
+    },
+    {
+        "id": 24,
+        "type": "meal",
+        "name": "Stuffed Zucchini Boats",
+        "description": "Zucchini halves filled with rice, vegetables, and cheese. Light, fresh, and savory.",
+        "image": "/stuffed-zucchini.jpg",
+        "price": "145",
+        "ingredients": [
+            [
+                "Zucchini",
+                "120g"
+            ],
+            [
+                "Rice",
+                "60g"
+            ],
+            [
+                "Tomatoes",
+                "40g"
+            ],
+            [
+                "Cheese mix",
+                "40g"
+            ],
+            [
+                "Herbs mix",
+                "3g"
+            ]
+        ],
+        "bestWith": [
+            2,
+            5,
+            30
+        ]
+    },
+    {
+        "id": 25,
+        "type": "meal",
+        "name": "Pork Schnitzel",
+        "description": "Crispy breaded pork cutlet fried golden. Crunchy outside, tender inside.",
+        "image": "/pork-schnitzel.jpg",
+        "price": "160",
+        "ingredients": [
+            [
+                "Pork cutlet",
+                "150g"
+            ],
+            [
+                "Breadcrumbs",
+                "40g"
+            ],
+            [
+                "Egg",
+                "30g"
+            ],
+            [
+                "Flour",
+                "30g"
+            ],
+            [
+                "Salt & pepper",
+                "2g"
+            ]
+        ],
+        "bestWith": [
+            2,
+            5,
+            31
+        ]
+    },
+    {
+        "id": 26,
+        "type": "meal",
+        "name": "Vegetable Curry",
+        "description": "Mixed vegetables simmered in spiced curry sauce with coconut milk. Warm, aromatic, and vegan-friendly.",
+        "image": "/vegetable-curry.jpg",
+        "price": "150",
+        "ingredients": [
+            [
+                "Potatoes",
+                "60g"
+            ],
+            [
+                "Carrots",
+                "40g"
+            ],
+            [
+                "Cauliflower",
+                "50g"
+            ],
+            [
+                "Curry paste",
+                "20g"
+            ],
+            [
+                "Coconut milk",
+                "80g"
+            ]
+        ],
+        "bestWith": [
+            2,
+            5,
+            32
+        ]
+    },
+    {
+        "id": 27,
+        "type": "meal",
+        "name": "Stuffed Mushrooms",
+        "description": "Large mushrooms filled with cheese, herbs, and breadcrumbs. Savory, earthy, and aromatic.",
+        "image": "/stuffed-mushrooms.jpg",
+        "price": "140",
+        "ingredients": [
+            [
+                "Mushrooms",
+                "120g"
+            ],
+            [
+                "Cheese mix",
+                "40g"
+            ],
+            [
+                "Breadcrumbs",
+                "20g"
+            ],
+            [
+                "Garlic",
+                "6g"
+            ],
+            [
+                "Parsley",
+                "5g"
+            ]
+        ],
+        "bestWith": [
+            2,
+            5,
+            33
+        ]
+    },
+    {
+        "id": 28,
+        "type": "salad",
+        "name": "Greek Village Salad",
+        "description": "Classic mix of tomatoes, cucumbers, olives, and feta with olive oil. Bright, tangy, and refreshing.",
+        "image": "/salad2.jpg",
+        "price": "120",
+        "ingredients": [
+            [
+                "Tomatoes",
+                "60g"
+            ],
+            [
+                "Cucumber",
+                "40g"
+            ],
+            [
+                "Red onion",
+                "20g"
+            ],
+            [
+                "Feta cheese",
+                "40g"
+            ],
+            [
+                "Olives",
+                "30g"
+            ],
+            [
+                "Olive oil",
+                "15g"
+            ]
+        ],
+        "bestWith": [
+            3,
+            5,
+            20
+        ]
+    },
+    {
+        "id": 29,
+        "type": "salad",
+        "name": "Caesar Salad",
+        "description": "Crisp romaine lettuce with parmesan, croutons, and creamy Caesar dressing. Savory and crunchy.",
+        "image": "/salad3.jpg",
+        "price": "125",
+        "ingredients": [
+            [
+                "Romaine lettuce",
+                "70g"
+            ],
+            [
+                "Parmesan",
+                "20g"
+            ],
+            [
+                "Croutons",
+                "30g"
+            ],
+            [
+                "Caesar dressing",
+                "30g"
+            ],
+            [
+                "Salt & pepper",
+                "2g"
+            ]
+        ],
+        "bestWith": [
+            1,
+            3,
+            5
+        ]
+    },
+    {
+        "id": 30,
+        "type": "salad",
+        "name": "Caprese Salad",
+        "description": "Fresh mozzarella, tomatoes, and basil drizzled with olive oil. Simple, elegant, and aromatic.",
+        "image": "/salad4.jpg",
+        "price": "115",
+        "ingredients": [
+            [
+                "Mozzarella",
+                "60g"
+            ],
+            [
+                "Tomatoes",
+                "60g"
+            ],
+            [
+                "Basil",
+                "5g"
+            ],
+            [
+                "Olive oil",
+                "15g"
+            ],
+            [
+                "Salt & pepper",
+                "2g"
+            ]
+        ],
+        "bestWith": [
+            3,
+            5,
+            11
+        ]
+    },
+    {
+        "id": 31,
+        "type": "salad",
+        "name": "Quinoa Power Salad",
+        "description": "Nutty quinoa with fresh greens, avocado, and lemon dressing. Light, energizing, and wholesome.",
+        "image": "/salad5.jpg",
+        "price": "130",
+        "ingredients": [
+            [
+                "Quinoa",
+                "80g"
+            ],
+            [
+                "Avocado",
+                "40g"
+            ],
+            [
+                "Spinach",
+                "40g"
+            ],
+            [
+                "Lemon juice",
+                "10g"
+            ],
+            [
+                "Olive oil",
+                "15g"
+            ]
+        ],
+        "bestWith": [
+            8,
+            5,
+            17
+        ]
+    },
+    {
+        "id": 32,
+        "type": "salad",
+        "name": "Beetroot Goat Cheese Salad",
+        "description": "Roasted beetroot paired with creamy goat cheese and walnuts. Sweet, earthy, and nutty.",
+        "image": "/salad6.jpg",
+        "price": "135",
+        "ingredients": [
+            [
+                "Beetroot",
+                "80g"
+            ],
+            [
+                "Goat cheese",
+                "40g"
+            ],
+            [
+                "Walnuts",
+                "20g"
+            ],
+            [
+                "Arugula",
+                "40g"
+            ],
+            [
+                "Olive oil",
+                "15g"
+            ]
+        ],
+        "bestWith": [
+            7,
+            5,
+            19
+        ]
+    },
+    {
+        "id": 33,
+        "type": "salad",
+        "name": "Asian Sesame Salad",
+        "description": "Cabbage, carrots, and sesame seeds tossed in soy-ginger dressing. Crisp, tangy, and aromatic.",
+        "image": "/salad7.jpg",
+        "price": "125",
+        "ingredients": [
+            [
+                "Cabbage",
+                "60g"
+            ],
+            [
+                "Carrots",
+                "40g"
+            ],
+            [
+                "Sesame seeds",
+                "10g"
+            ],
+            [
+                "Soy sauce",
+                "15g"
+            ],
+            [
+                "Ginger",
+                "5g"
+            ]
+        ],
+        "bestWith": [
+            22,
+            5,
+            26
+        ]
+    },
+    {
+        "id": 34,
+        "type": "salad",
+        "name": "Avocado & Mango Salad",
+        "description": "Creamy avocado with sweet mango and lime dressing. Tropical, fresh, and vibrant.",
+        "image": "/salad8.jpg",
+        "price": "140",
+        "ingredients": [
+            [
+                "Avocado",
+                "60g"
+            ],
+            [
+                "Mango",
+                "60g"
+            ],
+            [
+                "Lime juice",
+                "10g"
+            ],
+            [
+                "Mixed greens",
+                "40g"
+            ],
+            [
+                "Olive oil",
+                "15g"
+            ]
+        ],
+        "bestWith": [
+            7,
+            5,
+            18
+        ]
+    },
+    {
+        "id": 35,
+        "type": "salad",
+        "name": "Spinach Strawberry Salad",
+        "description": "Fresh spinach leaves with sweet strawberries and balsamic glaze. Sweet, tangy, and refreshing.",
+        "image": "/salad9.jpg",
+        "price": "125",
+        "ingredients": [
+            [
+                "Spinach",
+                "60g"
+            ],
+            [
+                "Strawberries",
+                "60g"
+            ],
+            [
+                "Balsamic glaze",
+                "15g"
+            ],
+            [
+                "Walnuts",
+                "20g"
+            ],
+            [
+                "Feta cheese",
+                "30g"
+            ]
+        ],
+        "bestWith": [
+            15,
+            5,
+            27
+        ]
+    },
+    {
+        "id": 36,
+        "type": "pizza",
+        "name": "Margherita Pizza",
+        "description": "Classic Italian pizza with tomato sauce, mozzarella, and fresh basil. Simple, fresh, and aromatic.",
+        "image": "/pizza2.jpg",
+        "price": "170",
+        "ingredients": [
+            [
+                "Pizza dough",
+                "120g"
+            ],
+            [
+                "Tomato sauce",
+                "60g"
+            ],
+            [
+                "Mozzarella",
+                "80g"
+            ],
+            [
+                "Basil",
+                "5g"
+            ]
+        ],
+        "bestWith": [
+            2,
+            5,
+            28
+        ]
+    },
+    {
+        "id": 37,
+        "type": "pizza",
+        "name": "Pepperoni Pizza",
+        "description": "Savory pepperoni layered over mozzarella and tomato sauce. Bold, spicy, and comforting.",
+        "image": "/pizza3.jpg",
+        "price": "185",
+        "ingredients": [
+            [
+                "Pizza dough",
+                "120g"
+            ],
+            [
+                "Tomato sauce",
+                "60g"
+            ],
+            [
+                "Mozzarella",
+                "80g"
+            ],
+            [
+                "Pepperoni",
+                "60g"
+            ]
+        ],
+        "bestWith": [
+            5,
+            29,
+            25
+        ]
+    },
+    {
+        "id": 38,
+        "type": "pizza",
+        "name": "Supreme",
+        "description": "Loaded with bell peppers, onions, mushrooms, and olives. Colorful, hearty, and meat-free.",
+        "image": "/pizza4.jpg",
+        "price": "175",
+        "ingredients": [
+            [
+                "Pizza dough",
+                "120g"
+            ],
+            [
+                "Tomato sauce",
+                "60g"
+            ],
+            [
+                "Mozzarella",
+                "80g"
+            ],
+            [
+                "Bell peppers",
+                "40g"
+            ],
+            [
+                "Onions",
+                "30g"
+            ],
+            [
+                "Mushrooms",
+                "40g"
+            ],
+            [
+                "Olives",
+                "30g"
+            ]
+        ],
+        "bestWith": [
+            2,
+            5,
+            31
+        ]
+    },
+    {
+        "id": 39,
+        "type": "pizza",
+        "name": "BBQ Chicken Pizza",
+        "description": "Tender chicken pieces with smoky BBQ sauce and mozzarella. Sweet, savory, and bold.",
+        "image": "/pizza5.jpg",
+        "price": "190",
+        "ingredients": [
+            [
+                "Pizza dough",
+                "120g"
+            ],
+            [
+                "BBQ sauce",
+                "50g"
+            ],
+            [
+                "Mozzarella",
+                "80g"
+            ],
+            [
+                "Chicken breast",
+                "80g"
+            ],
+            [
+                "Onions",
+                "30g"
+            ]
+        ],
+        "bestWith": [
+            5,
+            28,
+            20
+        ]
+    },
+    {
+        "id": 40,
+        "type": "pizza",
+        "name": "Garden Pizza",
+        "description": "Tomato base topped with zucchini, mushrooms, peppers, and cheese. Fresh, light, and plant-based.",
+        "image": "/pizza6.jpg",
+        "price": "180",
+        "ingredients": [
+            [
+                "Pizza dough",
+                "120g"
+            ],
+            [
+                "Tomato sauce",
+                "60g"
+            ],
+            [
+                "cheese",
+                "80g"
+            ],
+            [
+                "Zucchini",
+                "40g"
+            ],
+            [
+                "Mushrooms",
+                "40g"
+            ],
+            [
+                "Bell peppers",
+                "40g"
+            ]
+        ],
+        "bestWith": [
+            2,
+            5,
+            34
+        ]
+    },
+    {
+        "id": 41,
+        "type": "pizza",
+        "name": "Hawaiian Pizza",
+        "description": "Sweet pineapple paired with ham and mozzarella. Tropical, savory-sweet, and comforting.",
+        "image": "/pizza7.jpg",
+        "price": "185",
+        "ingredients": [
+            [
+                "Pizza dough",
+                "120g"
+            ],
+            [
+                "Tomato sauce",
+                "60g"
+            ],
+            [
+                "Mozzarella",
+                "80g"
+            ],
+            [
+                "Ham",
+                "60g"
+            ],
+            [
+                "Pineapple",
+                "50g"
+            ]
+        ],
+        "bestWith": [
+            5,
+            29,
+            24
+        ]
+    },
+    {
+        "id": 42,
+        "type": "pizza",
+        "name": "Spinach & Ricotta Pizza",
+        "description": "Creamy ricotta with fresh spinach and mozzarella. Mild, creamy, and friendly.",
+        "image": "/pizza8.jpg",
+        "price": "175",
+        "ingredients": [
+            [
+                "Pizza dough",
+                "120g"
+            ],
+            [
+                "Tomato sauce",
+                "60g"
+            ],
+            [
+                "Mozzarella",
+                "60g"
+            ],
+            [
+                "Ricotta",
+                "40g"
+            ],
+            [
+                "Spinach",
+                "40g"
+            ]
+        ],
+        "bestWith": [
+            2,
+            5,
+            35
+        ]
+    },
+    {
+        "id": 43,
+        "type": "pizza",
+        "name": "Meat Lovers Pizza",
+        "description": "Packed with pepperoni, sausage, ham, and bacon. Hearty, savory, and indulgent.",
+        "image": "/pizza9.jpg",
+        "price": "195",
+        "ingredients": [
+            [
+                "Pizza dough",
+                "120g"
+            ],
+            [
+                "Tomato sauce",
+                "60g"
+            ],
+            [
+                "Mozzarella",
+                "80g"
+            ],
+            [
+                "Pepperoni",
+                "40g"
+            ],
+            [
+                "Sausage",
+                "40g"
+            ],
+            [
+                "Ham",
+                "40g"
+            ],
+            [
+                "Bacon",
+                "40g"
+            ]
+        ],
+        "bestWith": [
+            5,
+            28,
+            16
+        ]
+    },
+    {
+        "id": 44,
+        "type": "pizza",
+        "name": "Mediterranean Pizza",
+        "description": "Tomato base with olives, artichokes, spinach, and cheese. Earthy, tangy, and plant-based.",
+        "image": "/pizza10.jpg",
+        "price": "185",
+        "ingredients": [
+            [
+                "Pizza dough",
+                "120g"
+            ],
+            [
+                "Tomato sauce",
+                "60g"
+            ],
+            [
+                "cheese",
+                "80g"
+            ],
+            [
+                "Olives",
+                "30g"
+            ],
+            [
+                "Artichokes",
+                "40g"
+            ],
+            [
+                "Spinach",
+                "40g"
+            ]
+        ],
+        "bestWith": [
+            2,
+            5,
+            32
+        ]
+    },
+    {
+        "id": 45,
+        "type": "pizza",
+        "name": "Mushroom & Truffle Pizza",
+        "description": "Rich mushrooms with truffle oil and mozzarella. Earthy, aromatic, and friendly.",
+        "image": "/pizza11.jpg",
+        "price": "190",
+        "ingredients": [
+            [
+                "Pizza dough",
+                "120g"
+            ],
+            [
+                "Tomato sauce",
+                "60g"
+            ],
+            [
+                "Mozzarella",
+                "80g"
+            ],
+            [
+                "Mushrooms",
+                "60g"
+            ],
+            [
+                "Truffle oil",
+                "5g"
+            ]
+        ],
+        "bestWith": [
+            2,
+            5,
+            33
+        ]
+    },
+    {
+        "id": 46,
+        "type": "pizza",
+        "name": "Buffalo Chicken Pizza",
+        "description": "Spicy buffalo chicken with mozzarella and ranch drizzle. Bold, tangy, and satisfying.",
+        "image": "/pizza12.jpg",
+        "price": "190",
+        "ingredients": [
+            [
+                "Pizza dough",
+                "120g"
+            ],
+            [
+                "Buffalo sauce",
+                "40g"
+            ],
+            [
+                "Mozzarella",
+                "80g"
+            ],
+            [
+                "Chicken breast",
+                "80g"
+            ],
+            [
+                "Ranch dressing",
+                "20g"
+            ]
+        ],
+        "bestWith": [
+            5,
+            28,
+            22
+        ]
+    },
+    {
+        "id": 47,
+        "type": "dessert",
+        "name": "Chocolate Lava Cake",
+        "description": "Rich chocolate cake with a molten center. Warm, indulgent, and decadent.",
+        "image": "/dessert2.jpg",
+        "price": "105",
+        "ingredients": [
+            [
+                "Dark chocolate",
+                "60g"
+            ],
+            [
+                "Butter",
+                "30g"
+            ],
+            [
+                "Eggs",
+                "40g"
+            ],
+            [
+                "Flour",
+                "20g"
+            ],
+            [
+                "Sugar",
+                "20g"
+            ]
+        ],
+        "bestWith": [
+            5,
+            36,
+            41
+        ]
+    },
+    {
+        "id": 48,
+        "type": "dessert",
+        "name": "Strawberry Cheesecake",
+        "description": "Creamy cheesecake topped with fresh strawberries and glaze. Sweet, smooth, and fruity.",
+        "image": "/dessert3.jpg",
+        "price": "110",
+        "ingredients": [
+            [
+                "Cream cheese",
+                "80g"
+            ],
+            [
+                "Strawberries",
+                "60g"
+            ],
+            [
+                "Sugar",
+                "30g"
+            ],
+            [
+                "Butter",
+                "20g"
+            ],
+            [
+                "Flour",
+                "30g"
+            ]
+        ],
+        "bestWith": [
+            5,
+            35,
+            28
+        ]
+    },
+    {
+        "id": 49,
+        "type": "dessert",
+        "name": "Tiramisu",
+        "description": "Layers of coffee-soaked ladyfingers with mascarpone cream. Elegant, smooth, and aromatic.",
+        "image": "/dessert4.jpg",
+        "price": "115",
+        "ingredients": [
+            [
+                "Mascarpone",
+                "80g"
+            ],
+            [
+                "Ladyfingers",
+                "60g"
+            ],
+            [
+                "Coffee",
+                "40g"
+            ],
+            [
+                "Cocoa powder",
+                "10g"
+            ],
+            [
+                "Sugar",
+                "20g"
+            ]
+        ],
+        "bestWith": [
+            5,
+            36,
+            20
+        ]
+    },
+    {
+        "id": 50,
+        "type": "dessert",
+        "name": "Matcha Cheesecake",
+        "description": "Creamy cheesecake infused with matcha green tea. Smooth, earthy, and modern.",
+        "image": "/dessert5.jpg",
+        "price": "120",
+        "ingredients": [
+            [
+                "Cream cheese",
+                "80g"
+            ],
+            [
+                "Matcha powder",
+                "10g"
+            ],
+            [
+                "Sugar",
+                "30g"
+            ],
+            [
+                "Butter",
+                "20g"
+            ],
+            [
+                "Flour",
+                "30g"
+            ]
+        ],
+        "bestWith": [
+            5,
+            40,
+            34
+        ]
+    },
+    {
+        "id": 51,
+        "type": "dessert",
+        "name": "Baklava",
+        "description": "Layers of flaky pastry filled with nuts and honey syrup. Sweet, crunchy, and aromatic.",
+        "image": "/dessert6.jpg",
+        "price": "100",
+        "ingredients": [
+            [
+                "Phyllo pastry",
+                "60g"
+            ],
+            [
+                "Walnuts",
+                "40g"
+            ],
+            [
+                "Pistachios",
+                "40g"
+            ],
+            [
+                "Honey",
+                "30g"
+            ],
+            [
+                "Butter",
+                "20g"
+            ]
+        ],
+        "bestWith": [
+            5,
+            44,
+            19
+        ]
+    },
+    {
+        "id": 52,
+        "type": "dessert",
+        "name": "Mango Mousse",
+        "description": "Light mousse made with ripe mangoes and cream. Tropical, airy, and refreshing.",
+        "image": "/dessert7.jpg",
+        "price": "95",
+        "ingredients": [
+            [
+                "Mango",
+                "80g"
+            ],
+            [
+                "Cream",
+                "60g"
+            ],
+            [
+                "Sugar",
+                "20g"
+            ],
+            [
+                "Gelatin",
+                "5g"
+            ]
+        ],
+        "bestWith": [
+            5,
+            34,
+            7
+        ]
+    },
+    {
+        "id": 53,
+        "type": "dessert",
+        "name": "Panna Cotta",
+        "description": "Silky Italian cream dessert with vanilla and berry coulis. Smooth, delicate, and elegant.",
+        "image": "/dessert8.jpg",
+        "price": "100",
+        "ingredients": [
+            [
+                "Cream",
+                "80g"
+            ],
+            [
+                "Milk",
+                "40g"
+            ],
+            [
+                "Sugar",
+                "20g"
+            ],
+            [
+                "Vanilla",
+                "5g"
+            ],
+            [
+                "Gelatin",
+                "5g"
+            ],
+            [
+                "Berry coulis",
+                "30g"
+            ]
+        ],
+        "bestWith": [
+            5,
+            28,
+            36
+        ]
+    },
+    {
+        "id": 54,
+        "type": "drink",
+        "name": "Fresh Orange Juice",
+        "description": "Bright, tangy juice squeezed from ripe oranges. Refreshing and full of vitamin C.",
+        "image": "/juice1.jpg",
+        "price": "60",
+        "ingredients": [
+            [
+                "Oranges",
+                "200g"
+            ]
+        ],
+        "bestWith": [
+            47,
+            28,
+            36
+        ]
+    },
+    {
+        "id": 55,
+        "type": "drink",
+        "name": "Apple Juice",
+        "description": "Sweet, crisp juice pressed from fresh apples. Smooth and naturally refreshing.",
+        "image": "/juice2.jpg",
+        "price": "55",
+        "ingredients": [
+            [
+                "Apples",
+                "200g"
+            ]
+        ],
+        "bestWith": [
+            48,
+            29,
+            38
+        ]
+    },
+    {
+        "id": 56,
+        "type": "drink",
+        "name": "Carrot–Ginger Juice",
+        "description": "Earthy carrots blended with zesty ginger. Energizing and slightly spicy.",
+        "image": "/juice3.jpg",
+        "price": "65",
+        "ingredients": [
+            [
+                "Carrots",
+                "150g"
+            ],
+            [
+                "Ginger",
+                "10g"
+            ]
+        ],
+        "bestWith": [
+            31,
+            8,
+            40
+        ]
+    },
+    {
+        "id": 57,
+        "type": "drink",
+        "name": "Pomegranate Juice",
+        "description": "Deep ruby juice with tart-sweet flavor. Rich in antioxidants and refreshing.",
+        "image": "/juice4.jpg",
+        "price": "70",
+        "ingredients": [
+            [
+                "Pomegranate seeds",
+                "200g"
+            ]
+        ],
+        "bestWith": [
+            32,
+            7,
+            45
+        ]
+    },
+    {
+        "id": 58,
+        "type": "drink",
+        "name": "Tropical Mix Juice",
+        "description": "Blend of pineapple, mango, and passionfruit. Sweet, exotic, and vibrant.",
+        "image": "/juice5.jpg",
+        "price": "75",
+        "ingredients": [
+            [
+                "Pineapple",
+                "80g"
+            ],
+            [
+                "Mango",
+                "80g"
+            ],
+            [
+                "Passionfruit",
+                "40g"
+            ]
+        ],
+        "bestWith": [
+            34,
+            52,
+            41
+        ]
+    },
+    {
+        "id": 59,
+        "type": "drink",
+        "name": "Beetroot–Apple Juice",
+        "description": "Earthy beetroot balanced with sweet apple. Nutritious, bold, and refreshing.",
+        "image": "/juice6.jpg",
+        "price": "65",
+        "ingredients": [
+            [
+                "Beetroot",
+                "100g"
+            ],
+            [
+                "Apple",
+                "100g"
+            ]
+        ],
+        "bestWith": [
+            32,
+            18,
+            44
+        ]
+    },
+    {
+        "id": 60,
+        "type": "drink",
+        "name": "Jasmine Green Tea",
+        "description": "Delicate green tea infused with jasmine blossoms. Floral, soothing, and light.",
+        "image": "/tea1.jpg",
+        "price": "55",
+        "ingredients": [
+            [
+                "Green tea leaves",
+                "200g"
+            ],
+            [
+                "Jasmine flowers",
+                "5g"
+            ]
+        ],
+        "bestWith": [
+            28,
+            47,
+            36
+        ]
+    },
+    {
+        "id": 61,
+        "type": "drink",
+        "name": "Earl Grey Black Tea",
+        "description": "Bold black tea scented with bergamot. Aromatic, smooth, and classic.",
+        "image": "/tea2.jpg",
+        "price": "50",
+        "ingredients": [
+            [
+                "Black tea leaves",
+                "200g"
+            ],
+            [
+                "Bergamot oil",
+                "2g"
+            ]
+        ],
+        "bestWith": [
+            49,
+            25,
+            37
+        ]
+    },
+    {
+        "id": 62,
+        "type": "drink",
+        "name": "Chamomile Herbal Tea",
+        "description": "Gentle chamomile flowers steeped for a calming infusion. Soft, floral, and relaxing.",
+        "image": "/tea3.jpg",
+        "price": "50",
+        "ingredients": [
+            [
+                "Chamomile flowers",
+                "200g"
+            ]
+        ],
+        "bestWith": [
+            53,
+            17,
+            42
+        ]
+    },
+    {
+        "id": 63,
+        "type": "drink",
+        "name": "Hibiscus Iced Tea",
+        "description": "Tangy hibiscus petals brewed and chilled. Bright, refreshing, and slightly tart.",
+        "image": "/tea4.jpg",
+        "price": "60",
+        "ingredients": [
+            [
+                "Hibiscus petals",
+                "200g"
+            ],
+            [
+                "Sugar",
+                "15g"
+            ],
+            [
+                "Ice",
+                "100g"
+            ]
+        ],
+        "bestWith": [
+            35,
+            52,
+            38
+        ]
+    },
+    {
+        "id": 64,
+        "type": "drink",
+        "name": "Espresso",
+        "description": "Strong, concentrated coffee shot. Bold, intense, and aromatic.",
+        "image": "/coffee1.jpg",
+        "price": "50",
+        "ingredients": [
+            [
+                "Coffee beans",
+                "20g"
+            ],
+            [
+                "Water",
+                "30ml"
+            ]
+        ],
+        "bestWith": [
+            49,
+            25,
+            43
+        ]
+    },
+    {
+        "id": 65,
+        "type": "drink",
+        "name": "Cappuccino",
+        "description": "Espresso topped with steamed milk and foam. Creamy, balanced, and comforting.",
+        "image": "/coffee2.jpg",
+        "price": "65",
+        "ingredients": [
+            [
+                "Espresso",
+                "30ml"
+            ],
+            [
+                "Steamed milk",
+                "60ml"
+            ],
+            [
+                "Milk foam",
+                "30ml"
+            ]
+        ],
+        "bestWith": [
+            48,
+            47,
+            36
+        ]
+    },
+    {
+        "id": 66,
+        "type": "drink",
+        "name": "Latte",
+        "description": "Smooth espresso blended with steamed milk. Mild, creamy, and versatile.",
+        "image": "/coffee3.jpg",
+        "price": "70",
+        "ingredients": [
+            [
+                "Espresso",
+                "30ml"
+            ],
+            [
+                "Steamed milk",
+                "120ml"
+            ]
+        ],
+        "bestWith": [
+            50,
+            53,
+            42
+        ]
+    },
+    {
+        "id": 67,
+        "type": "drink",
+        "name": "Iced Coffee",
+        "description": "Chilled espresso poured over ice with milk. Refreshing, bold, and smooth.",
+        "image": "/coffee4.jpg",
+        "price": "75",
+        "ingredients": [
+            [
+                "Espresso",
+                "30ml"
+            ],
+            [
+                "Milk",
+                "60ml"
+            ],
+            [
+                "Ice",
+                "100g"
+            ]
+        ],
+        "bestWith": [
+            52,
+            35,
+            41
+        ]
+    },
+    {
+        "id": 68,
+        "type": "drink",
+        "name": "Cabernet Sauvignon Wine",
+        "description": "Full-bodied red wine with dark fruit notes. Smooth, bold, and elegant.",
+        "image": "/wine1.jpg",
+        "price": "120",
+        "ingredients": [
+            [
+                "Cabernet Sauvignon grapes",
+                "200ml"
+            ]
+        ],
+        "bestWith": [
+            23,
+            13,
+            43
+        ]
+    },
+    {
+        "id": 69,
+        "type": "drink",
+        "name": "White Wine (Chardonnay)",
+        "description": "Crisp white wine with citrus and oak notes. Light, refreshing, and smooth.",
+        "image": "/wine2.jpg",
+        "price": "115",
+        "ingredients": [
+            [
+                "Chardonnay grapes",
+                "200ml"
+            ]
+        ],
+        "bestWith": [
+            7,
+            28,
+            42
+        ]
+    },
+    {
+        "id": 70,
+        "type": "drink",
+        "name": "Sparkling Wine (Prosecco)",
+        "description": "Effervescent sparkling wine with fruity notes. Festive, crisp, and lively.",
+        "image": "/wine3.jpg",
+        "price": "130",
+        "ingredients": [
+            [
+                "Prosecco grapes",
+                "200ml"
+            ]
+        ],
+        "bestWith": [
+            53,
+            19,
+            36
+        ]
+    },
+    {
+        "id": 71,
+        "type": "drink",
+        "name": "Beer ",
+        "description": "Golden lager with crisp, clean flavor. Refreshing and easy-drinking.",
+        "image": "/beer1.jpg",
+        "price": "85",
+        "ingredients": [
+            [
+                "Barley malt",
+                "200ml"
+            ],
+            [
+                "Hops",
+                "5g"
+            ]
+        ],
+        "bestWith": [
+            16,
+            25,
+            41
+        ]
+    },
+    {
+        "id": 72,
+        "type": "drink",
+        "name": "Craft IPA",
+        "description": "Hoppy craft beer with citrus and pine notes. Bold, bitter, and aromatic.",
+        "image": "/beer2.jpg",
+        "price": "95",
+        "ingredients": [
+            [
+                "Barley malt",
+                "200ml"
+            ],
+            [
+                "Hops",
+                "10g"
+            ]
+        ],
+        "bestWith": [
+            22,
+            43,
+            39
+        ]
+    },
+    {
+        "id": 73,
+        "type": "drink",
+        "name": "Mojito",
+        "description": "Refreshing cocktail with rum, mint, lime, and soda. Sweet, tangy, and cooling.",
+        "image": "/cocktail1.jpg",
+        "price": "95",
+        "ingredients": [
+            [
+                "White rum",
+                "50ml"
+            ],
+            [
+                "Mint leaves",
+                "5g"
+            ],
+            [
+                "Lime juice",
+                "20ml"
+            ],
+            [
+                "Sugar",
+                "10g"
+            ],
+            [
+                "Soda water",
+                "100ml"
+            ]
+        ],
+        "bestWith": [
+            28,
+            34,
+            40
+        ]
+    },
+    {
+        "id": 74,
+        "type": "drink",
+        "name": "Margarita",
+        "description": "Classic tequila cocktail with lime and triple sec. Zesty, bold, and refreshing.",
+        "image": "/cocktail2.jpg",
+        "price": "100",
+        "ingredients": [
+            [
+                "Tequila",
+                "50ml"
+            ],
+            [
+                "Triple sec",
+                "20ml"
+            ],
+            [
+                "Lime juice",
+                "20ml"
+            ],
+            [
+                "Salt rim",
+                "2g"
+            ]
+        ],
+        "bestWith": [
+            41,
+            22,
+            46
+        ]
+    },
+    {
+        "id": 75,
+        "type": "drink",
+        "name": "Whiskey Sour",
+        "description": "Smooth whiskey shaken with lemon juice and sugar. Tangy, bold, and balanced.",
+        "image": "/cocktail3.jpg",
+        "price": "105",
+        "ingredients": [
+            [
+                "Whiskey",
+                "50ml"
+            ],
+            [
+                "Lemon juice",
+                "20ml"
+            ],
+            [
+                "Sugar syrup",
+                "10ml"
+            ],
+            [
+                "Egg white (optional)",
+                "10ml"
+            ]
+        ],
+        "bestWith": [
+            25,
+            43,
+            47
+        ]
+    },
+    {
+        "id": 76,
+        "type": "drink",
+        "name": "Gin & Tonic",
+        "description": "Crisp gin mixed with tonic water and lime. Refreshing, light, and aromatic.",
+        "image": "/cocktail4.jpg",
+        "price": "95",
+        "ingredients": [
+            [
+                "Gin",
+                "50ml"
+            ],
+            [
+                "Tonic water",
+                "150ml"
+            ],
+            [
+                "Lime wedge",
+                "10g"
+            ]
+        ],
+        "bestWith": [
+            29,
+            32,
+            53
+        ]
+    },
+    {
+        "id": 77,
+        "type": "drink",
+        "name": "Rum Punch",
+        "description": "Tropical cocktail with rum, fruit juices, and grenadine. Sweet, fruity, and festive.",
+        "image": "/cocktail5.jpg",
+        "price": "110",
+        "ingredients": [
+            [
+                "Dark rum",
+                "50ml"
+            ],
+            [
+                "Pineapple juice",
+                "40ml"
+            ],
+            [
+                "Orange juice",
+                "40ml"
+            ],
+            [
+                "Grenadine",
+                "10ml"
+            ]
+        ],
+        "bestWith": [
+            34,
+            52,
+            41
+        ]
+    }
+]

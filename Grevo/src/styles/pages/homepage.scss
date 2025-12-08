@@ -1,0 +1,311 @@
+@use "../common/breakpoints" as *;
+@use "../common/variables" as *;
+@use "../common/fonts" as *;
+@use "../common/common" as *;
+@use "../common/mixins" as *;
+
+.homepage-main {
+    background: $main-bg;
+
+    .content {
+        padding: {
+            top: 120px;
+            bottom: 220px;
+        }
+
+        .introduction {
+            width: 70%;
+
+            &__title {
+                @include font-hero;
+                @include accent-text;
+                margin-bottom: 40px;
+            }
+
+            &__paragraph {
+                @include font-text;
+                margin-bottom: 25px;
+            }
+
+            &__reservation-link {
+                @include font-text;
+                color: $link;
+                font-weight: 600;
+                text-decoration: underline;
+                padding: 0 10px;
+
+                &:hover {
+                    color: $link-hover;
+                    text-decoration: underline;
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
+
+.homepage-aside {
+    background-color: $secondary-bg;
+
+    .content {
+        display: flex;
+        justify-content: space-around;
+
+        padding: {
+            top: 120px;
+            bottom: 120px;
+        }
+
+        .feature-section {
+            width: 60%;
+            text-align: center;
+
+            &__title {
+                @include font-h2;
+                margin-bottom: 40px;
+            }
+
+            &__text {
+                @include font-text;
+            }
+        }
+    }
+}
+
+.homepage-section {
+    background: $main-bg;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        padding: {
+            top: 120px;
+            bottom: 170px;
+        }
+
+        .title {
+            @include font-h2;
+            margin-bottom: 80px;
+            text-align: center;
+        }
+
+        .actions-group {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+
+            &__action {
+                width: 600px;
+                height: 400px;
+                border-radius: 32px;
+                background-color: $secondary-bg;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                transition: all 0.8s ease-in-out;
+
+                img {
+                    width: 420px;
+                    height: 320px;
+                    transition: all 0.8s ease-in-out;
+                }
+
+                h3 {
+                    @include font-h3;
+                    transition: all 0.8s ease-in-out;
+                }
+
+                &:hover {
+                    transform: scale(1.05);
+                    background: #1b140f;
+                    box-shadow: 0 0 30px 20px #110c09;
+
+                    img,
+                    h3 {
+                        transform: scale(1.05);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include respond($bp-xxl) {
+    .homepage-main {
+        .content {
+            padding: {
+                top: 100px;
+                bottom: 180px;
+            }
+
+            .introduction {
+                &__title {
+                    margin-bottom: 30px;
+                }
+
+                &__paragraph {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+
+    .homepage-aside {
+        .content {
+            padding: {
+                top: 100px;
+                bottom: 100px;
+            }
+        }
+    }
+
+    .homepage-section {
+        .content {
+            .title {
+                margin-bottom: 60px;
+            }
+
+            .actions-group {
+                &__action {
+                    width: 500px;
+                }
+            }
+        }
+    }
+}
+
+@include respond($bp-xl) {
+    .homepage-main {
+        .content {
+            .introduction {
+                width: 100%;
+            }
+        }
+    }
+
+    .homepage-aside {
+        .content {
+            padding: {
+                top: 70px;
+                bottom: 70px;
+            }
+
+            .feature-section {
+                width: 75%;
+
+                &__title {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+
+    section {
+        .content {
+            padding: {
+                top: 120px;
+                bottom: 170px;
+            }
+
+            .title {
+                margin-bottom: 50px;
+            }
+
+            .actions-group {
+                flex-direction: column;
+                gap: 70px;
+                align-items: center;
+            }
+        }
+    }
+}
+
+@include respond($bp-md) {
+    .homepage-main {
+        .content {
+            padding: {
+                top: 60px;
+                bottom: 100px;
+            }
+
+            .introduction {
+                width: 100%;
+
+                &__title {
+                    margin-bottom: 20px;
+                }
+
+                &__paragraph {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+
+    .homepage-aside {
+        .content {
+            padding: {
+                top: 50px;
+                bottom: 50px;
+            }
+
+            .feature-section {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+
+    .homepage-section {
+        .content {
+            padding: {
+                top: 80px;
+                bottom: 120px;
+            }
+
+            .title {
+                margin-bottom: 50px;
+            }
+
+            .actions-group {
+                &__action {
+                    width: 350px;
+                    height: 270px;
+                    border-radius: 28px;
+
+                    img {
+                        width: 280px;
+                        height: 200px;
+                    }
+
+                    &:hover {
+                        box-shadow: 0 0 20px 15px #110c09;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include respond($bp-sm) {
+    .homepage-section {
+        .content {
+            .actions-group {
+                &__action {
+                    width: 300px;
+                    height: 250px;
+                    border-radius: 24px;
+                    padding: 30px 0;
+                    box-sizing: border-box;
+
+                    img {
+                        width: 240px;
+                        height: 160px;
+                    }
+                }
+            }
+        }
+    }
+}

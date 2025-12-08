@@ -1,0 +1,165 @@
+@use "breakpoints" as *;
+
+$font-family: "Open Sans", sans-serif;
+
+// Font weights
+$weight-hero: 700;
+$weight-h2: 600;
+$weight-h3: 600;
+$weight-h4: 600;
+$weight-text: 400;
+$weight-small-text: 400;
+$weight-nav: 600;
+
+// Desktop
+$desktop_hero: 64px;
+$desktop_h2: 58px;
+$desktop_h3: 42px;
+$desktop_h4: 30px;
+$desktop_text: 32px;
+$small_text: 22px;
+$desktop_nav: 28px;
+
+// Laptop
+$laptop_hero: 56px;
+$laptop_h2: 52px;
+$laptop_h3: 36px;
+$laptop_h4: 28px;
+$laptop_text: 26px;
+$small_text_laptop: 20px;
+$laptop_nav: 26px;
+
+// Tablet
+$tablet_hero: 48px;
+$tablet_h2: 44px;
+$tablet_h3: 32px;
+$tablet_h4: 26px;
+$tablet_text: 24px;
+$small_text_tablet: 18px;
+
+// Mobile
+$mobile_hero: 40px;
+$mobile_h2: 36px;
+$mobile_h3: 28px;
+$mobile_h4: 22px;
+$mobile_text: 20px;
+$small_text_mobile: 16px;
+$mobile_nav: 22px;
+
+@mixin font-hero {
+    font-family: $font-family;
+    font-weight: $weight-hero;
+    font-size: $desktop_hero;
+
+    @include respond($bp-xl) {
+        font-size: $laptop_hero;
+    }
+    @include respond($bp-md) {
+        font-size: $tablet_hero;
+    }
+    @include respond($bp-sm) {
+        font-size: $mobile_hero;
+    }
+}
+
+@mixin font-h2 {
+    font-family: $font-family;
+    font-weight: $weight-h2;
+    font-size: $desktop_h2;
+
+    @include respond($bp-xl) {
+        font-size: $laptop_h2;
+    }
+    @include respond($bp-md) {
+        font-size: $tablet_h2;
+    }
+    @include respond($bp-sm) {
+        font-size: $mobile_h2;
+    }
+}
+
+@mixin font-h3 {
+    font-family: $font-family;
+    font-weight: $weight-h3;
+    font-size: $desktop_h3;
+
+    @include respond($bp-xl) {
+        font-size: $laptop_h3;
+    }
+    @include respond($bp-md) {
+        font-size: $tablet_h3;
+    }
+    @include respond($bp-sm) {
+        font-size: $mobile_h3;
+    }
+}
+
+@mixin font-h4 {
+    font-family: $font-family;
+    font-weight: $weight-h4;
+    font-size: $desktop_h4;
+
+    @include respond($bp-xl) {
+        font-size: $laptop_h4;
+    }
+    @include respond($bp-md) {
+        font-size: $tablet_h4;
+    }
+    @include respond($bp-sm) {
+        font-size: $mobile_h4;
+    }
+}
+
+@mixin font-text {
+    font-family: $font-family;
+    font-weight: $weight-text;
+
+    font-size: $desktop_text;
+    line-height: $desktop_text * 1.4;
+
+    @include respond($bp-xl) {
+        font-size: $laptop_text;
+        line-height: $laptop_text * 1.4;
+    }
+
+    @include respond($bp-md) {
+        font-size: $tablet_text;
+        line-height: $tablet_text * 1.4;
+    }
+
+    @include respond($bp-sm) {
+        font-size: $mobile_text;
+        line-height: $mobile_text * 1.4;
+    }
+}
+
+@mixin font-small-text {
+    font-family: $font-family;
+    font-weight: $weight-small-text;
+    font-size: $small_text;
+
+    @include respond($bp-xl) {
+        font-size: $small_text_laptop;
+    }
+    @include respond($bp-md) {
+        font-size: $small_text_tablet;
+    }
+    @include respond($bp-sm) {
+        font-size: $small_text_mobile;
+    }
+}
+
+@mixin font-nav {
+    font-family: $font-family;
+    font-weight: $weight-nav;
+    font-size: $desktop_nav;
+    letter-spacing: 1px;
+
+    @include respond($bp-xl) {
+        font-size: $laptop_nav;
+    }
+
+    @include respond($bp-sm) {
+        font-size: $mobile_nav;
+    }
+}

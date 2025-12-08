@@ -1,0 +1,103 @@
+@use "../common/breakpoints" as *;
+@use "../common/variables" as *;
+@use "../common/fonts" as *;
+@use "../common/common" as *;
+
+.footer {
+    background-color: $dark-bg;
+
+    .content {
+        padding-top: 50px;
+
+        .links {
+            display: flex;
+            justify-content: space-between;
+            @include font-small-text;
+            margin-bottom: 30px;
+
+            & a:hover {
+                transform: scale(1.05);
+            }
+
+            &__contact-info {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                list-style-type: none;
+            }
+
+            &__info-and-media {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 35px;
+
+                .links__info {
+                    text-align: right;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 30px;
+                }
+
+                .links__media {
+                    display: flex;
+                    gap: 20px;
+
+                    & img {
+                        width: 52px;
+                    }
+                }
+            }
+        }
+
+        .copyrights {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 40px;
+        }
+    }
+}
+
+@include respond($bp-lg) {
+    .footer {
+        background-color: $dark-bg;
+
+        .content {
+            padding-top: 50px;
+
+            .links {
+                flex-direction: column;
+                justify-content: none;
+                gap: 70px;
+                align-content: left;
+
+                &__info-and-media {
+                    .links__info {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include respond($bp-sm) {
+    .footer {
+        .content {
+            .links {
+                &__info-and-media {
+                    .links__media {
+                        & img {
+                            width: 40px;
+                        }
+                    }
+                }
+            }
+            .copyrights {
+                display: flex;
+                justify-content: space-between;
+                padding: 10px 0;
+            }
+        }
+    }
+}

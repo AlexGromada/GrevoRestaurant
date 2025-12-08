@@ -1,0 +1,161 @@
+@use "../common/breakpoints" as *;
+@use "../common/variables" as *;
+@use "../common/fonts" as *;
+@use "../common/common" as *;
+@use "../common/mixins" as *;
+
+.authentication-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    .form-container {
+        background: $main-bg;
+        flex: 1;
+
+        .form-content {
+            height: 100%;
+            padding: 90px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+
+            .authentication-form {
+                background-color: $main-alt-bg;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                width: 800px;
+                padding: 40px;
+                padding-bottom: 60px;
+                box-sizing: border-box;
+                border: 6px solid $secondary-alt-bg;
+                border-radius: 16px;
+                box-shadow: 0 0 40px 15px $secondary-bg;
+
+                &__title {
+                    @include font-h3;
+                    text-align: center;
+                }
+
+                &__label {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    margin-bottom: 10px;
+                }
+
+                &__label-title {
+                    @include font-h4;
+                }
+
+                &__input {
+                    padding: 10px 20px;
+                    @include font-text;
+                    border-radius: 16px;
+                    border-width: 6px;
+                }
+
+                &__input:focus {
+                    outline: none;
+                }
+
+                &__error {
+                    @include font-small-text;
+                    color: red;
+                }
+
+                &__note {
+                    @include font-text;
+                    width: 100%;
+                    margin-bottom: 15px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 10px;
+
+                    span {
+                        text-decoration: underline;
+                        cursor: pointer;
+                        display: block
+                    }
+                }
+
+                &__submit {
+                    @include font-nav;
+                    width: 70%;
+                    padding: 20px 0;
+                    border: none;
+                    border-radius: 16px;
+                    transition: all 0.8s ease-in-out;
+
+                    &:hover {
+                        transform: scale(1.1);
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include respond($bp-lg) {
+    .authentication-page {
+        .form-container {
+            .form-content {
+                padding: 60px 0;
+
+                .authentication-form {
+                    width: 70%;
+                    padding: 30px;
+                    padding-bottom: 60px;
+                    box-shadow: 0 0 30px 10px $secondary-bg;
+
+                    &__input {
+                        padding: 10px;
+                    }
+
+                    &__submit {
+                        padding: 15px 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include respond($bp-sm) {
+    .authentication-page {
+        .form-container {
+            .form-content {
+                .authentication-form {
+                    width: 90%;
+                    padding: 30px 20px;
+                    padding-bottom: 40px;
+
+
+                    &__label {
+                        gap: 5px;
+                        margin-bottom: 0;
+                    }
+
+                    &__input {
+                        padding: 5px 15px;
+                        @include font-small-text;
+                    }
+
+                    &__note {
+                        @include font-small-text;
+                        margin-bottom: 0;
+                    }
+
+                    &__submit {
+                        padding: 10px 0;
+                    }
+                }
+            }
+        }
+    }
+}

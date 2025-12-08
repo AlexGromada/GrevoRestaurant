@@ -1,0 +1,27 @@
+a,
+a:active,
+a:hover,
+a:visited {
+    color: white;
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+    display: inline-block;
+}
+
+a > img {
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+        display: inline-block;
+        transform: scale(1.1);
+    }
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+li {
+    color: white;
+}

@@ -1,0 +1,59 @@
+$bp-xxl: 1920px;
+$bp-xl: 1440px;
+$bp-lg: 1024px;
+$bp-md: 768px;
+$bp-sm: 430px;
+
+@mixin respond($breakpoint) {
+    @media (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+.container {
+    width: 100%;
+
+    .content {
+        width: 1920px;
+        max-width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+
+        padding: {
+            right: 160px;
+            left: 160px;
+        }
+
+        @include respond($bp-xxl) {
+            width: 1440px;
+            max-width: 100%;
+            
+            padding: {
+                right: 120px;
+                left: 120px;
+            }
+        }
+
+        @include respond($bp-xl) {
+            width: 1024px;
+            max-width: 100%;
+
+            padding: {
+                right: 60px;
+                left: 60px;
+            }
+        }
+
+        @include respond($bp-lg) {
+            width: 100%;
+            margin: 0;
+        }
+
+        @include respond($bp-md) {
+            padding: {
+                right: 40px;
+                left: 40px;
+            }
+        }
+    }
+}

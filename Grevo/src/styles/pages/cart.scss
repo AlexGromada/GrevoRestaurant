@@ -1,0 +1,245 @@
+@use "../common/breakpoints" as *;
+@use "../common/variables" as *;
+@use "../common/fonts" as *;
+@use "../common/common" as *;
+@use "../common/mixins" as *;
+
+.cart-page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    .cart-container {
+        background: $main-alt-bg;
+
+        .cart-content {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            height: 100%;
+
+            padding: {
+                top: 30px;
+                bottom: 50px;
+            }
+
+            .cart-list {
+                width: 80%;
+                display: flex;
+                flex-direction: column;
+                gap: 70px;
+
+                .empty-cart-message {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    text-align: center;
+                    align-items: center;
+                    justify-content: center;
+                    @include font-h2;
+                }
+
+                &__item {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    align-items: center;
+                    box-sizing: border-box;
+                    padding: 10px 20px;
+                    border: 6px solid white;
+                    border: {
+                        right: none;
+                        left: none;
+                    }
+
+                    .dish-data {
+                        display: flex;
+                        gap: 30px;
+                        align-items: center;
+
+                        &__image {
+                            height: 150px;
+                            width: 150px;
+                            object-fit: cover;
+                            border-radius: 32px;
+                        }
+
+                        &__name {
+                            @include font-h4;
+                        }
+                    }
+
+                    .item-operations {
+                        display: flex;
+                        gap: 40px;
+
+                        .price-and-counter {
+                            text-align: center;
+                            margin-top: 28px;
+
+                            &__counter {
+                                display: flex;
+                                align-items: center;
+                                gap: 10px;
+                                margin-bottom: 10px;
+
+                                .minus,
+                                .plus {
+                                    width: 52px;
+                                    transition: all 0.8s ease-in-out;
+
+                                    &:hover {
+                                        transform: scale(1.1);
+                                        cursor: pointer;
+                                    }
+                                }
+
+                                .ammount {
+                                    width: 100px;
+                                    padding: 10px;
+                                    text-align: center;
+                                    border: none;
+                                    border-radius: 16px;
+                                    outline: none;
+                                    @include font-h4;
+
+                                    &:focus {
+                                        outline: none;
+                                    }
+                                }
+                            }
+
+                            &__price {
+                                font-size: 18px;
+                                font-weight: 600;
+                            }
+                        }
+
+                        .remove-item {
+                            width: 52px;
+                            transition: all 0.8s ease-in-out;
+
+                            &:hover {
+                                transform: scale(1.1);
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .total-and-payment {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 250px;
+                padding: 25px;
+                box-sizing: border-box;
+                background-color: $secondary-alt-bg;
+                border: 4px solid $secondary-bg;
+                border-radius: 16px;
+
+                &__total {
+                    @include font-h4;
+                    text-align: center;
+                    margin-bottom: 20px;
+                }
+
+                &__payment {
+                    width: 90%;
+                    padding: 10px 0;
+                    text-align: center;
+                    background: $accent;
+                    border: 3px solid white;
+                    border-radius: 16px;
+                    transition: all 0.8s ease-in-out;
+
+                    @include font-h4;
+                    color: white;
+
+                    &:hover {
+                        transform: scale(1.05);
+                        box-shadow: 0 0 15px 5px white;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include respond($bp-xl) {
+    .cart-page {
+        .cart-container {
+            .cart-content {
+                flex-direction: column-reverse;
+
+                .cart-list {
+                    width: 100%;
+                    &__item {
+                        flex-direction: column;
+                        border: 6px solid white;
+                        border-radius: 32px;
+
+                        .dish-data {
+                            width: 95%;
+
+                            &__name {
+                                @include font-h3;
+                            }
+                        }
+
+                        .item-operations {
+                            width: 95%;
+                            justify-content: space-between;
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+
+                .total-and-payment {
+                    width: 100%;
+                    padding: 20px 5px;
+
+                    &__payment {
+                        width: 40%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include respond($bp-sm) {
+    .cart-page {
+        .cart-container {
+            .cart-content {
+                .cart-list {
+                    width: 100%;
+
+                    &__item {
+                        padding: 20px 10px;
+
+                        .item-operations {
+                            margin-bottom: 0;
+
+                            .price-and-counter .ammount{
+                                width: 50px;
+                                padding: 5px 10px;
+                            }
+                        }
+                    }
+                }
+
+                .total-and-payment {
+                    width: 100%;
+                    padding: 20px 5px;
+
+                    &__payment {
+                        width: 60%;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,119 @@
+@use "../common/breakpoints" as *;
+@use "../common/variables" as *;
+@use "../common/fonts" as *;
+@use "../common/common" as *;
+@use "../common/mixins" as *;
+
+.header {
+    background-color: $dark-bg;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    .hidden{
+        display: none;
+    }
+
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+
+        padding: {
+            top: 20px;
+            bottom: 20px;
+        }
+
+        & img {
+            width: 65px;
+            transition: all 0.5s ease-in-out;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
+        }
+
+        .header__nav {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+
+            nav > ul {
+                display: flex;
+                gap: 40px;
+                @include font-nav;
+
+                a {
+                    text-transform: uppercase;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+
+                .accent {
+                    @include accent-text;
+                }
+            }
+        }
+
+        .user-data {
+            display: flex;
+            gap: 40px;
+        }
+
+        .navigation-menu-icon {
+            display: none;
+        }
+    }
+}
+
+@include respond($bp-xxl) {
+    .header {
+        .content {
+            & img {
+                width: 52px;
+            }
+
+            .header__nav {
+                gap: 40px;
+            }
+
+            .user-data {
+                gap: 20px;
+            }
+        }
+    }
+}
+
+@include respond($bp-lg) {
+    .header {
+        .content {
+            .header__nav {
+                nav {
+                    display: none;
+                }
+            }
+
+            .user-data {
+                display: none;
+            }
+
+            .navigation-menu-icon {
+                display: block;
+            }
+        }
+    }
+}
+
+@include respond($bp-md) {
+    .header {
+        .content {
+            padding: {
+                top: 10px;
+                bottom: 10px;
+            }
+        }
+    }
+}

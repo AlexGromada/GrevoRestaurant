@@ -1,0 +1,152 @@
+@use "../common/breakpoints" as *;
+@use "../common/variables" as *;
+@use "../common/fonts" as *;
+@use "../common/common" as *;
+@use "../common/mixins" as *;
+
+.food-menu,
+.recommendations {
+    .food-menu__content,
+    .recommendations__list {
+        .menu-item {
+            width: 330px;
+
+            &__image {
+                height: 250px;
+                background-color: $secondary-alt-bg;
+                box-sizing: border-box;
+                border: 5px solid $secondary-bg;
+                border-bottom: 0;
+                border-radius: 32px 32px 0 0;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            &__name {
+                height: 90px;
+                display: flex;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+
+                background: $main-alt-bg;
+                border: 5px solid #4b3b32;
+                border-top: 0;
+                border-radius: 0 0 32px 32px;
+                padding: 5px 20px 10px 20px;
+                box-sizing: border-box;
+
+                @include font-h4;
+            }
+        }
+    }
+}
+
+@include respond($bp-xxl) {
+    .food-menu,
+    .recommendations {
+        .food-menu__content,
+        .recommendations__list {
+            .menu-item {
+                width: 250px;
+
+                &__image {
+                    height: 220px;
+                }
+
+                &__name {
+                    padding: 5px 10px 10px 10px;
+                }
+            }
+        }
+    }
+}
+
+@include respond($bp-xl) {
+    .food-menu,
+    .recommendations {
+        .food-menu__content,
+        .recommendations__list {
+            .menu-item {
+                width: 270px;
+
+                &__image {
+                    height: 250px;
+                }
+
+                &__name {
+                    height: 70px;
+                    padding: 5px 20px 10px 20px;
+                }
+            }
+        }
+    }
+}
+
+@include respond($bp-lg) {
+    .food-menu,
+    .recommendations {
+        .food-menu__content,
+        .recommendations__list {
+            .menu-item {
+                width: 260px;
+
+                &__image {
+                    height: 250px;
+                }
+
+                &__name {
+                    height: 70px;
+                    padding: 5px 10px 10px 10px;
+                }
+            }
+        }
+    }
+}
+
+@include respond($bp-md) {
+    .food-menu,
+    .recommendations {
+        .food-menu__content,
+        .recommendations__list {
+            .menu-item {
+                width: 100%;
+
+                &__image {
+                    height: 350px;
+                }
+
+                &__name {
+                    height: 70px;
+                    padding: 5px 10px 10px 10px;
+                }
+            }
+        }
+    }
+}
+
+@include respond($bp-sm) {
+    .food-menu,
+    .recommendations {
+        .food-menu__content,
+        .recommendations__list {
+            .menu-item {
+                width: 100%;
+
+                &__image {
+                    height: 250px;
+                }
+
+                &__name {
+                    height: 70px;
+                    padding: 5px 10px 10px 10px;
+                }
+            }
+        }
+    }
+}
