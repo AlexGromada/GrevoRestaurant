@@ -17,7 +17,7 @@ function UserDataProvider({ children }) {
 
         const fetchUserData = async () => {
             try {
-                const checkRes = await fetch("http://localhost:3000/auth/check", {
+                const checkRes = await fetch("https://grevo-server.onrender.com/auth/check", {
                     headers: { "Authorization": `Bearer ${token}` }
                 });
                 const checkData = await checkRes.json();
@@ -31,13 +31,13 @@ function UserDataProvider({ children }) {
 
                 setUser(checkData.user);
 
-                const ordersRes = await fetch("http://localhost:3000/auth/orders", {
+                const ordersRes = await fetch("https://grevo-server.onrender.com/auth/orders", {
                     headers: { "Authorization": `Bearer ${token}` }
                 });
                 const ordersData = await ordersRes.json();
                 setOrders(ordersData.orders);
 
-                const cartRes = await fetch("http://localhost:3000/auth/cart", {
+                const cartRes = await fetch("https://grevo-server.onrender.com/auth/cart", {
                     headers: { "Authorization": `Bearer ${token}` }
                 });
                 const cartData = await cartRes.json();
@@ -62,7 +62,7 @@ function UserDataProvider({ children }) {
 
         const updateCartOnServer = async () => {
             try {
-                await fetch("http://localhost:3000/auth/cart", {
+                await fetch("https://grevo-server.onrender.com/auth/cart", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -80,7 +80,7 @@ function UserDataProvider({ children }) {
         if (cart.length === 0) {
             const fetchOrders = async () => {
                 try {
-                    const ordersRes = await fetch("http://localhost:3000/auth/orders", {
+                    const ordersRes = await fetch("https://grevo-server.onrender.com/auth/orders", {
                         headers: { "Authorization": `Bearer ${token}` }
                     });
                     const ordersData = await ordersRes.json();

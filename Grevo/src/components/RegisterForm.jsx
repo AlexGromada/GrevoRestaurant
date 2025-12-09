@@ -20,7 +20,7 @@ function RegisterForm({ switchFunction, isVisible }) {
         }
 
         try {
-            const res = await fetch("http://localhost:3000/auth/register", {
+            const res = await fetch("https://grevo-server.onrender.com/auth/register", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, password})
@@ -33,7 +33,7 @@ function RegisterForm({ switchFunction, isVisible }) {
                 return;
             }
 
-            const loginRes = await fetch("http://localhost:3000/auth/login", {
+            const loginRes = await fetch("https://grevo-server.onrender.com/auth/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, password })

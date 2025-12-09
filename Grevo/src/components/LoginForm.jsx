@@ -14,7 +14,7 @@ function LoginForm({ switchFunction, isVisible}) {
         setError("");
 
         try {
-            const res = await fetch("http://localhost:3000/auth/login", {
+            const res = await fetch("https://grevo-server.onrender.com/auth/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, password }),

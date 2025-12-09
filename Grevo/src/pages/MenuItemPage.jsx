@@ -41,7 +41,7 @@ function MenuItemPage() {
         if (!token) return;
 
         try {
-            await fetch("http://localhost:3000/auth/cart", {
+            await fetch("https://grevo-server.onrender.com/auth/cart", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

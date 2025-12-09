@@ -19,7 +19,7 @@ function Cart() {
     const updateCartOnServer = async (updated) => {
         if (!user || !token) return;
 
-        await fetch("http://localhost:3000/auth/cart", {
+        await fetch("https://grevo-server.onrender.com/auth/cart", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -63,7 +63,7 @@ function Cart() {
             total: cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
         };
 
-        await fetch("http://localhost:3000/auth/orders", {
+        await fetch("https://grevo-server.onrender.com/auth/orders", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
