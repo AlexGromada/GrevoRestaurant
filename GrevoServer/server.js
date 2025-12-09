@@ -6,7 +6,9 @@ import userRoutes from './routes/user.js';
 dotenv.config();
 
 const app = express();
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(cors({
+    origin: ["http://localhost:5173", "https://grevo-restaurant.netlify.app"]
+}));
 app.use(express.json());
 app.use('/auth', userRoutes);
 
