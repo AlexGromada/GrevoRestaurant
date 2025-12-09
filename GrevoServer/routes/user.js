@@ -8,8 +8,6 @@ const router = express.Router();
 // Auth middleware to protect routes
 function authMiddleware(req, res, next) {
     const authHeader = req.headers["authorization"];
-    console.log("AUTH HEADER:", authHeader);
-    console.log("JWT SECRET:", process.env.JWT_SECRET);
 
     if (!authHeader) return res.status(401).json({ error: "No token" });
 
