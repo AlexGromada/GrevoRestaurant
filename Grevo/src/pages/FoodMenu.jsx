@@ -1,6 +1,6 @@
 import Header from "../components/Header.jsx"
 import FoodFilter from "../components/FoodFilter.jsx"
-import FoodFilterPopup from "../components/foodFilterPopup.jsx"
+import FoodFilterPopup from "../components/FoodFilterPopup.jsx"
 import MenuItem from "../components/MenuItem.jsx"
 import Footer from "../components/Footer.jsx"
 
