@@ -9,7 +9,7 @@ import Close from "../assets/close.svg"
 
 import '../styles/components/navigationMenuPopup.scss'
 
-function NavigationMenuPopup({ switchFunction}) {
+function NavigationMenuPopup({ user, switchFunction }) {
 
     return (
         <>
@@ -25,10 +25,9 @@ function NavigationMenuPopup({ switchFunction}) {
                                     <img src={isActive ? CartActive : Cart} alt="Cart" />
                                 )}
                             </NavLink>
-                            <NavLink
-                                to="/profile">
+                            <NavLink to={user ? "/profile" : "/authentication"}>
                                 {({ isActive }) => (
-                                    <img src={isActive ? ProfilePictureActive : ProfilePicture} alt="Cart" />
+                                    <img src={isActive ? ProfilePictureActive : ProfilePicture} alt="Profile" />
                                 )}
                             </NavLink>
                         </div>

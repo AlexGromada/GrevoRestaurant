@@ -23,7 +23,7 @@ function RegisterForm({ switchFunction, isVisible }) {
             const res = await fetch("http://localhost:3000/auth/register", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email, password, userName: email.split("@")[0] })
+                body: JSON.stringify({ email, password})
             });
 
             const data = await res.json();

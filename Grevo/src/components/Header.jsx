@@ -56,7 +56,7 @@ function Header() {
                 <img className="navigation-menu-icon" onClick={() => setMenuState(true)} src={NavigationMenuIcon} alt="navigation menu icon" />
             </div>
             <div className="content header-popup" style={{ display: `${!MenuState ? 'none' : 'flex'}` }}>
-                <NavigationMenuPopup switchFunction={setMenuState} />
+                <NavigationMenuPopup user={user} switchFunction={setMenuState} />
             </div>
         </header>
     )

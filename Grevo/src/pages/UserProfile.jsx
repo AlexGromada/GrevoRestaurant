@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
 
@@ -8,7 +9,8 @@ import { UserDataContext } from "../context/UserDataContext.jsx";
 import "../styles/pages/userProfile.scss";
 
 function UserProfile() {
-    const { user, orders, loading } = useContext(UserDataContext);
+    const { user, orders, loading, setUser, setCart, setOrders } = useContext(UserDataContext);
+    const navigate = useNavigate();
 
     if (loading) return <p>Loading...</p>;
 
