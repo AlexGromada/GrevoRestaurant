@@ -9,6 +9,9 @@ const pool = new Pool({
     database: process.env.DB_NAME,
     password: process.env.DB_PASS,
     port: process.env.DB_PORT,
+    ssl: {
+        rejectUnauthorized: false
+    }
 });
 
 export async function getUser(email) {
@@ -21,10 +24,10 @@ export async function getUserById(userId) {
     return res.rows[0];
 }
 
-export async function addUser(email, password, userName) {
+export async function addUser(email, password) {
     await pool.query(
-        'INSERT INTO users (email, password, username) VALUES ($1, $2, $3)',
-        [email, password, userName]
+        'INSERT INTO users (email, password) VALUES ($1, $2)',
+        [email, password]
     );
 }
 

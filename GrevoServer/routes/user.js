@@ -8,6 +8,9 @@ const router = express.Router();
 // Auth middleware to protect routes
 function authMiddleware(req, res, next) {
     const authHeader = req.headers["authorization"];
+    console.log("AUTH HEADER:", authHeader);
+    console.log("JWT SECRET:", process.env.JWT_SECRET);
+
     if (!authHeader) return res.status(401).json({ error: "No token" });
 
     const token = authHeader.split(" ")[1];
@@ -22,11 +25,11 @@ function authMiddleware(req, res, next) {
 
 // Registration route
 router.post('/register', async (req, res) => {
-    const { email, password, userName } = req.body;
+    const { email, password} = req.body;
 
     try {
         const hashed = await bcrypt.hash(password, 10);
-        await addUser(email, hashed, userName);
+        await addUser(email, hashed);
         res.json({ success: true });
     } catch (err) {
         console.error(err);
