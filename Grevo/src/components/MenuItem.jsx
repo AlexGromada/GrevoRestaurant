@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import FoodPlaceholder from '../assets/FoodPlaceholder.svg'
+import FoodPlaceholder from "../assets/foodPlaceholder.svg";
 import "../styles/components/menuItem.scss"
 
 function MenuItem({ id, name, pathToImage }) {
