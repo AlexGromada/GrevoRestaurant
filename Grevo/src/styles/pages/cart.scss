@@ -9,6 +9,15 @@
     display: grid;
     grid-template-rows: auto 1fr auto;
 
+    &__loading-text {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include font-hero;
+    }
+
     .cart-container {
         background: $main-alt-bg;
 
@@ -223,7 +232,7 @@
                         .item-operations {
                             margin-bottom: 0;
 
-                            .price-and-counter .ammount{
+                            .price-and-counter .ammount {
                                 width: 50px;
                                 padding: 5px 10px;
                             }
