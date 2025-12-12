@@ -7,6 +7,7 @@ function UserDataProvider({ children }) {
     const [cart, setCart] = useState([]);
     const [orders, setOrders] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [cartLoaded, setCartLoaded] = useState(false);
 
     useEffect(() => {
         const token = localStorage.getItem("token");
@@ -25,6 +26,7 @@ function UserDataProvider({ children }) {
                     setUser(null);
                     setCart([]);
                     setOrders([]);
+                    setCartLoaded(true);
                     return;
                 }
 
@@ -35,6 +37,7 @@ function UserDataProvider({ children }) {
                 });
                 const cartData = await cartRes.json();
                 setCart(cartData.products || []);
+                setCartLoaded(true);
 
                 const ordersRes = await fetch("https://grevo-server.onrender.com/auth/orders", {
                     headers: { "Authorization": `Bearer ${token}` }
@@ -46,6 +49,7 @@ function UserDataProvider({ children }) {
                 setUser(null);
                 setCart([]);
                 setOrders([]);
+                setCartLoaded(true);
             } finally {
                 setLoading(false);
             }
@@ -74,7 +78,7 @@ function UserDataProvider({ children }) {
     }, [user]);
 
     useEffect(() => {
-        if (!user) return;
+        if (!user || !cartLoaded) return;
 
         const updateCartOnServer = async () => {
             try {
@@ -93,7 +97,7 @@ function UserDataProvider({ children }) {
         };
 
         updateCartOnServer();
-    }, [cart, user]);
+    }, [cart, user, cartLoaded]);
 
     return (
         <UserDataContext.Provider value={{ user, setUser, cart, setCart, orders, setOrders, loading }}>
