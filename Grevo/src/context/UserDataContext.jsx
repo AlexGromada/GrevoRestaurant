@@ -7,7 +7,6 @@ function UserDataProvider({ children }) {
     const [cart, setCart] = useState([]);
     const [orders, setOrders] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [cartLoaded, setCartLoaded] = useState(false);
 
     useEffect(() => {
         const token = localStorage.getItem("token");
@@ -16,60 +15,75 @@ function UserDataProvider({ children }) {
             return;
         }
 
-        const fetchUserData = async () => {
+        const fetchInitialData = async () => {
             try {
                 const checkRes = await fetch("https://grevo-server.onrender.com/auth/check", {
                     headers: { "Authorization": `Bearer ${token}` }
                 });
                 const checkData = await checkRes.json();
-
                 if (!checkData.loggedIn) {
                     setUser(null);
                     setCart([]);
                     setOrders([]);
-                    setCartLoaded(true);
                     return;
                 }
 
                 setUser(checkData.user);
-
-                const ordersRes = await fetch("https://grevo-server.onrender.com/auth/orders", {
-                    headers: { "Authorization": `Bearer ${token}` }
-                });
-                const ordersData = await ordersRes.json();
-                setOrders(ordersData.orders);
 
                 const cartRes = await fetch("https://grevo-server.onrender.com/auth/cart", {
                     headers: { "Authorization": `Bearer ${token}` }
                 });
                 const cartData = await cartRes.json();
                 setCart(cartData.products || []);
-                setCartLoaded(true);
 
+                const ordersRes = await fetch("https://grevo-server.onrender.com/auth/orders", {
+                    headers: { "Authorization": `Bearer ${token}` }
+                });
+                const ordersData = await ordersRes.json();
+                setOrders(ordersData.orders || []);
             } catch (err) {
-                console.error("Error fetching user data:", err);
+                console.error("Error fetching initial data:", err);
                 setUser(null);
                 setCart([]);
                 setOrders([]);
-                setCartLoaded(true);
             } finally {
                 setLoading(false);
             }
         };
 
-        fetchUserData();
+        fetchInitialData();
     }, []);
 
     useEffect(() => {
-        if (!user || !cartLoaded) return;
+        if (!user) return;
+
+        const fetchOrders = async () => {
+            try {
+                const token = localStorage.getItem("token");
+                const res = await fetch("https://grevo-server.onrender.com/auth/orders", {
+                    headers: { "Authorization": `Bearer ${token}` }
+                });
+                const data = await res.json();
+                setOrders(data.orders || []);
+            } catch (err) {
+                console.error("Failed to fetch orders:", err);
+            }
+        };
+
+        fetchOrders();
+    }, [user]);
+
+    useEffect(() => {
+        if (!user) return;
 
         const updateCartOnServer = async () => {
             try {
+                const token = localStorage.getItem("token");
                 await fetch("https://grevo-server.onrender.com/auth/cart", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
-                        "Authorization": `Bearer ${localStorage.getItem("token")}`,
+                        "Authorization": `Bearer ${token}`,
                     },
                     body: JSON.stringify({ products: cart }),
                 });
@@ -79,7 +93,7 @@ function UserDataProvider({ children }) {
         };
 
         updateCartOnServer();
-    }, [cart, user, cartLoaded]);
+    }, [cart, user]);
 
     return (
         <UserDataContext.Provider value={{ user, setUser, cart, setCart, orders, setOrders, loading }}>
