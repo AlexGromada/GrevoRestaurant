@@ -1,34 +1,44 @@
-import { useContext } from "react";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
 
 import ProfilePicture from "../assets/profilePicture.svg";
-import { UserDataContext } from "../context/UserDataContext.jsx";
-
 import "../styles/pages/userProfile.scss";
 
+import { logout } from "../store/slices/authSlice";
+import { clearCart } from "../store/slices/cartSlice";
+import { fetchOrders, clearOrders } from "../store/slices/ordersSlice";
+
 function UserProfile() {
-    const { user, orders, loading, setUser, setCart, setOrders } = useContext(UserDataContext);
+    const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    if (loading) return <p>Loading...</p>;
+    const user = useSelector(state => state.auth.user);
+    const orders = useSelector(state => state.orders.list);
+    const loading = useSelector(
+        state => state.auth.loading || state.orders.loading
+    );
+
+    useEffect(() => {
+        if (user && orders.length === 0) {
+            dispatch(fetchOrders());
+        }
+    }, [dispatch, user, orders.length]);
 
     const email = user?.email || "No email";
 
     const logOut = () => {
-        localStorage.removeItem("token");
-        setUser(null);
-        setCart([]);
-        setOrders([]);
+        dispatch(logout());
+        dispatch(clearCart());
+        dispatch(clearOrders());
         navigate("/");
     };
-
 
     return (
         <div className="profile-page">
             <Header />
-
             <main className="profile-container container">
                 <div className="profile-content content">
                     <section className="profile-info">
@@ -48,12 +58,15 @@ function UserProfile() {
                         </button>
                     </section>
 
-
                     <section className="order-history">
                         <h4 className="order-history__title">Your Orders</h4>
 
-                        {orders.length === 0 ? (
-                            <p className="order-history__empty">You haven't ordered anything yet.</p>
+                        {loading ? (
+                            <p className="loading-text">Loading your orders...</p>
+                        ) : orders.length === 0 ? (
+                            <p className="order-history__empty">
+                                You haven't ordered anything yet.
+                            </p>
                         ) : (
                             <ul className="order-history__list">
                                 {orders.map((order, index) => (
@@ -72,7 +85,6 @@ function UserProfile() {
                     </section>
                 </div>
             </main>
-
             <Footer />
         </div>
     );

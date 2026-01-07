@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom"
-import { useContext } from "react";
-import { UserDataContext } from "../context/UserDataContext";
+import { useSelector, useDispatch } from "react-redux"
 
 import NavigationMenuPopup from "./NavigationMenuPopup"
 import NavigationBar from "./NavigationBar"
@@ -13,10 +12,16 @@ import ProfilePictureActive from "../assets/profilePictureActive.svg"
 
 import '../styles/components/header.scss'
 import { useEffect, useState } from "react"
+import { checkAuth } from "../store/slices/authSlice"
 
 function Header() {
-    const { user } = useContext(UserDataContext);
+    const dispatch = useDispatch();
+    const user = useSelector(state => state.auth.user);
     const [MenuState, setMenuState] = useState(false)
+
+    useEffect(() => {
+        dispatch(checkAuth());
+    }, [dispatch]);
 
     useEffect(() => {
         const handleResize = () => {

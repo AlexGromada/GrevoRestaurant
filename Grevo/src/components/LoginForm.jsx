@@ -1,40 +1,27 @@
-import { useState, useContext } from "react";
-import { UserDataContext } from "../context/UserDataContext.jsx";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { login } from "../store/slices/authSlice";
 import { useNavigate } from "react-router-dom";
 
-function LoginForm({ switchFunction, isVisible}) {
-    const { setUser } = useContext(UserDataContext);
+function LoginForm({ switchFunction, isVisible }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError("");
 
         try {
-            const res = await fetch("https://grevo-server.onrender.com/auth/login", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email, password }),
-            });
-
-            const data = await res.json();
-
-            if (!data.loggedIn) {
-                setError("Email or password is incorrect");
-                return;
-            }
-
-            localStorage.setItem("token", data.token);
-            setUser(data.user);
+            await dispatch(login({ email, password })).unwrap();
             navigate("/profile");
         } catch (err) {
-            console.error(err);
-            setError("Something went wrong. Try again.");
+            setError(err.message || "Email or password is incorrect");
         }
     };
+
 
     return (
         <form className="authentication-form" onSubmit={handleSubmit} style={{ display: isVisible ? "flex" : "none" }}>

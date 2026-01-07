@@ -1,8 +1,8 @@
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
 
-import { useContext } from "react";
-import { UserDataContext } from "../context/UserDataContext";
 import foodData from "../data/food.json";
 
 import "../styles/pages/cart.scss";
@@ -10,11 +10,19 @@ import ArrowRight from "../assets/arrowRight.svg";
 import ArrowLeft from "../assets/arrowLeft.svg";
 import Trash from "../assets/trash.svg";
 import ImagePlaceholder from "../assets/foodPlaceholder.svg";
+import { removeFromCart, clearCart, syncCart, fetchCart, increaseQuantity, decreaseQuantity } from "../store/slices/cartSlice.js";
 
 function Cart() {
-    const { cart, setCart, user, loading } = useContext(UserDataContext);
-
+    const dispatch = useDispatch();
+    const cart = useSelector(state => state.cart.items);
+    const loading = useSelector(state => state.cart.loading);
     const token = localStorage.getItem("token");
+
+    useEffect(() => {
+        if (token) {
+            dispatch(fetchCart());
+        }
+    }, [dispatch, token]);
 
     if (loading) {
         return (
@@ -28,44 +36,20 @@ function Cart() {
         );
     }
 
-    const updateCartOnServer = async (updatedCart) => {
-        if (!user || !token) return;
-        try {
-            await fetch("https://grevo-server.onrender.com/auth/cart", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${token}`,
-                },
-                body: JSON.stringify({ products: updatedCart }),
-            });
-        } catch (err) {
-            console.error("Failed to update cart on server:", err);
-        }
-    };
 
     const increase = (id) => {
-        const updated = cart.map(item =>
-            item.id === id ? { ...item, quantity: item.quantity + 1 } : item
-        );
-        setCart(updated);
-        updateCartOnServer(updated);
+        dispatch(increaseQuantity(id));
+        dispatch(syncCart());
     };
 
     const decrease = (id) => {
-        const updated = cart.map(item =>
-            item.id === id
-                ? { ...item, quantity: Math.max(1, item.quantity - 1) }
-                : item
-        );
-        setCart(updated);
-        updateCartOnServer(updated);
+        dispatch(decreaseQuantity(id));
+        dispatch(syncCart());
     };
 
     const removeItem = (id) => {
-        const updated = cart.filter(item => item.id !== id);
-        setCart(updated);
-        updateCartOnServer(updated);
+        dispatch(removeFromCart(id));
+        dispatch(syncCart());
     };
 
     const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
@@ -79,7 +63,7 @@ function Cart() {
         };
 
         try {
-            await fetch("https://grevo-server.onrender.com/auth/orders", {
+            const res = await fetch("https://grevo-server.onrender.com/auth/orders", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -91,8 +75,10 @@ function Cart() {
                 }),
             });
 
-            setCart([]);
-            updateCartOnServer([]);
+            if (!res.ok) throw new Error("Failed to create order");
+
+            dispatch(clearCart());
+            dispatch(syncCart(cart.items));
         } catch (err) {
             console.error("Failed to create order:", err);
         }

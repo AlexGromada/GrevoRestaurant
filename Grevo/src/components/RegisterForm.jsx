@@ -1,13 +1,15 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { UserDataContext } from "../context/UserDataContext";
+import { useDispatch } from "react-redux";
+import { register } from "../store/slices/authSlice";
 
 function RegisterForm({ switchFunction, isVisible }) {
+    const dispatch = useDispatch();
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [error, setError] = useState("");
-    const { setUser } = useContext(UserDataContext);
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
@@ -20,45 +22,13 @@ function RegisterForm({ switchFunction, isVisible }) {
         }
 
         try {
-            const res = await fetch("https://grevo-server.onrender.com/auth/register", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email, password})
-            });
-
-            const data = await res.json();
-
-            if (!data.success) {
-                setError("Registration failed. Try again.");
-                return;
-            }
-
-            const loginRes = await fetch("https://grevo-server.onrender.com/auth/login", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email, password })
-            });
-
-            const loginData = await loginRes.json();
-
-            if (!loginData.loggedIn) {
-                setError("Login after registration failed. Try to login manually.");
-                return;
-            }
-
-            //читаєш?
-            //коротше сиділи вони біля багаття і він її обійняв так збоку
-
-            setUser(loginData.user);
-            localStorage.setItem("token", loginData.token);
-
+            await dispatch(register({ email, password })).unwrap();
             navigate("/profile");
-
         } catch (err) {
-            console.error(err);
-            setError("An error occurred. Try again.");
+            setError(err.message || "An error occurred. Try again.");
         }
     };
+
 
     return (
         <form
