@@ -10,7 +10,8 @@ import ArrowRight from "../assets/arrowRight.svg";
 import ArrowLeft from "../assets/arrowLeft.svg";
 import Trash from "../assets/trash.svg";
 import ImagePlaceholder from "../assets/foodPlaceholder.svg";
-import { removeFromCart, clearCart, syncCart, fetchCart, increaseQuantity, decreaseQuantity } from "../store/slices/cartSlice.js";
+import { removeFromCart, checkout, syncCart, fetchCart, increaseQuantity, decreaseQuantity } from "../store/slices/cartSlice.js";
+import { fetchOrders } from "../store/slices/ordersSlice.js";
 
 function Cart() {
     const dispatch = useDispatch();
@@ -57,31 +58,13 @@ function Cart() {
     const pay = async () => {
         if (cart.length === 0 || !token) return;
 
-        const newOrder = {
-            dishes: cart.map(item => `${item.name} x ${item.quantity}`),
-            total,
+        const orderPayload = {
+            products: cart.map(item => `${item.name} x ${item.quantity}`),
+            totalPrice: cart.reduce((sum, item) => sum + item.price * item.quantity, 0),
         };
 
-        try {
-            const res = await fetch("https://grevo-server.onrender.com/auth/orders", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${token}`,
-                },
-                body: JSON.stringify({
-                    products: newOrder.dishes,
-                    totalPrice: newOrder.total,
-                }),
-            });
-
-            if (!res.ok) throw new Error("Failed to create order");
-
-            dispatch(clearCart());
-            dispatch(syncCart(cart.items));
-        } catch (err) {
-            console.error("Failed to create order:", err);
-        }
+        await dispatch(checkout(orderPayload)).unwrap();
+        dispatch(fetchOrders());
     };
 
     return (

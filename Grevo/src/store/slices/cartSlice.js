@@ -24,8 +24,8 @@ export const syncCart = createAsyncThunk(
     "cart/syncCart",
     async (_, thunkAPI) => {
         const state = thunkAPI.getState();
-        const cartItems = state.cart.items; 
-        
+        const cartItems = state.cart.items;
+
         const token = localStorage.getItem("token");
         if (!token) return;
 
@@ -40,6 +40,33 @@ export const syncCart = createAsyncThunk(
                 body: JSON.stringify({ products: cartItems }),
             }
         );
+    }
+);
+
+export const checkout = createAsyncThunk(
+    "cart/checkout",
+    async (orderPayload, { dispatch, rejectWithValue }) => {
+        const token = localStorage.getItem("token");
+        try {
+            const res = await fetch("https://grevo-server.onrender.com/auth/orders", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`,
+                },
+                body: JSON.stringify(orderPayload),
+            });
+
+            if (!res.ok) throw new Error("Failed to create order");
+
+            dispatch(clearCart());
+            dispatch(syncCart());
+
+            const data = await res.json();
+            return data;
+        } catch (error) {
+            return rejectWithValue(error.message);
+        }
     }
 );
 
