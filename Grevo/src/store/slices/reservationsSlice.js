@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-// const API_URL = "https://grevo-server.onrender.com/auth";
-const API_URL = "http://localhost:3000/auth";
+const API_URL = "https://grevo-server.onrender.com/auth";
 
 export const fetchBookedTables = createAsyncThunk(
     "reservations/fetchBookedTables",
