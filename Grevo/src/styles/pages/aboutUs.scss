@@ -1,0 +1,113 @@
+@use "../common/breakpoints" as *;
+@use "../common/variables" as *;
+@use "../common/fonts" as *;
+@use "../common/common" as *;
+
+.about-us-main {
+    background: $main-bg;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+
+    .content {
+        flex: 1;
+        padding: 40px 0 60px 0;
+    }
+
+    .about-hero {
+        text-align: center;
+        margin-bottom: 40px;
+
+        &__title {
+            @include font-hero;
+            margin: 0;
+        }
+    }
+
+    .about-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .about-image-wrapper {
+        width: 100%;
+        max-width: 1000px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .about-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.5s ease;
+
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+
+    .about-story {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: justify;
+
+        &__tagline {
+            @include font-h3;
+            margin: 0 0 24px 0;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        &__text {
+            @include font-text;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+    }
+
+    .about-invitation {
+        text-align: center;
+        margin: 60px auto 20px auto;
+        max-width: 800px;
+        background: rgba($secondary-alt-bg, 0.4);
+        padding: 40px;
+        border-radius: 12px;
+        border: 1px dashed $main-alt-bg;
+
+        &__text {
+            @include font-h4;
+            margin: 0 0 8px 0;
+        }
+
+        &__brand {
+            @include font-small-text;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+    }
+}
+
+@include respond($bp-md) {
+    .about-us-main .content {
+        .about-hero {
+            margin-bottom: 30px;
+        }
+
+        .about-story {
+            text-align: left;
+        }
+
+        .about-invitation {
+            margin-top: 40px;
+            padding: 30px 20px;
+        }
+    }
+}

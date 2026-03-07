@@ -86,3 +86,32 @@ export async function addOrder(userId, order) {
         [userId, JSON.stringify(updatedOrders)]
     );
 }
+
+
+export async function getReservationsByDate(date) {
+    try {
+        const res = await pool.query(
+            'SELECT table_id, time, duration FROM reservations WHERE date = $1', 
+            [date]
+        );
+        return res.rows;
+    } catch (err) {
+        console.error("ERROR IN getReservationsByDate:", err);
+        throw err;
+    }
+}
+
+export async function addReservation(userId, tableId, date, time, duration, guests) {
+    try {
+        await pool.query(
+            'INSERT INTO reservations (user_id, table_id, date, time, duration, guests) VALUES ($1, $2, $3, $4, $5, $6)',
+            [userId, tableId, date, time, duration, guests]
+        );
+    } catch (err) {
+        console.error("ERROR IN addReservation:", err);
+        if (err.code === '23505') { 
+            throw new Error("Table is already booked for this time.");
+        }
+        throw err;
+    }
+}

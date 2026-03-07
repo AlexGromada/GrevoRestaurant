@@ -1,7 +1,7 @@
 import express from 'express';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import { getUser, getUserById, addUser, getCart, updateCart, getOrderHistory, addOrder } from '../data/usersData.js';
+import { getUser, getUserById, addUser, getCart, updateCart, getOrderHistory, addOrder, getReservationsByDate, addReservation } from '../data/usersData.js';
 
 const router = express.Router();
 
@@ -102,6 +102,38 @@ router.post('/orders', authMiddleware, async (req, res) => {
     await addOrder(req.userId, order);
 
     res.json({ success: true });
+});
+
+// Reservations Routes
+router.get('/reservations', authMiddleware, async (req, res) => {
+    const { date } = req.query;
+    
+    if (!date) return res.status(400).json({ error: "Date is required" });
+
+    try {
+        const bookedTables = await getReservationsByDate(date);
+        res.json({ bookedTables });
+    } catch (err) {
+        res.status(500).json({ error: "Failed to fetch reservations" });
+    }
+});
+
+router.post('/reservations', authMiddleware, async (req, res) => {
+    const { tableId, date, time, duration, guests } = req.body;
+
+    if (!tableId || !date || !time || !duration || !guests) {
+        return res.status(400).json({ error: "Missing reservation details" });
+    }
+
+    try {
+        await addReservation(req.userId, tableId, date, time, duration, guests);
+        res.json({ success: true, message: "Reservation confirmed!" });
+    } catch (err) {
+        if (err.message === "Table is already booked for this time.") {
+            return res.status(409).json({ success: false, error: err.message });
+        }
+        res.status(500).json({ success: false, error: "Failed to create reservation" });
+    }
 });
 
 export default router;

@@ -1,40 +1,53 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { register } from "../store/slices/authSlice";
+import { useForm } from "react-hook-form";
+import { register as registerUser } from "../store/slices/authSlice";
 
 function RegisterForm({ switchFunction, isVisible }) {
     const dispatch = useDispatch();
-
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
-    const [error, setError] = useState("");
     const navigate = useNavigate();
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setError("");
+    const {
+        register,
+        handleSubmit,
+        watch,
+        setError,
+        formState: { errors, isSubmitting },
+    } = useForm({
+        mode: "onSubmit",
+    });
 
-        if (password !== confirmPassword) {
-            setError("Passwords do not match");
-            return;
-        }
+    const password = watch("password");
 
+    const onSubmit = async (data) => {
         try {
-            await dispatch(register({ email, password })).unwrap();
+            await dispatch(
+                registerUser({
+                    email: data.email,
+                    password: data.password,
+                })
+            ).unwrap();
+
             navigate("/profile");
         } catch (err) {
-            setError(err.message || "An error occurred. Try again.");
+            console.error("Registration error:", err);
+            setError("root", {
+                message: err.message || "An error occurred. Try again.",
+            });
         }
     };
 
+    const firstError =
+        errors.email ||
+        errors.password ||
+        errors.confirmPassword ||
+        errors.root;
 
     return (
         <form
             className="authentication-form"
             style={{ display: isVisible ? "flex" : "none" }}
-            onSubmit={handleSubmit}
+            onSubmit={handleSubmit(onSubmit)}
         >
             <h3 className="authentication-form__title">Create Account</h3>
 
@@ -43,11 +56,14 @@ function RegisterForm({ switchFunction, isVisible }) {
                 <input
                     className="authentication-form__input"
                     type="email"
-                    name="email"
                     placeholder="Enter your email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
+                    {...register("email", {
+                        required: "Please enter your email",
+                        pattern: {
+                            value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                            message: "Enter a valid email address",
+                        },
+                    })}
                 />
             </label>
 
@@ -56,35 +72,50 @@ function RegisterForm({ switchFunction, isVisible }) {
                 <input
                     className="authentication-form__input"
                     type="password"
-                    name="password"
                     placeholder="Create a password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
+                    {...register("password", {
+                        required: "Please create a password",
+                    })}
                 />
             </label>
 
             <label className="authentication-form__label">
-                <h4 className="authentication-form__label-title">Confirm Password</h4>
+                <h4 className="authentication-form__label-title">
+                    Confirm Password
+                </h4>
                 <input
                     className="authentication-form__input"
                     type="password"
-                    name="confirmPassword"
                     placeholder="Repeat your password"
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                    required
+                    {...register("confirmPassword", {
+                        required: "Please confirm your password",
+                        validate: (value) =>
+                            value === password || "Passwords do not match",
+                    })}
                 />
             </label>
 
-            {error && <p className="authentication-form__note" style={{ color: "red" }}>{error}</p>}
+            {firstError && (
+                <p
+                    className="authentication-form__note"
+                    style={{ color: "red" }}
+                >
+                    {firstError.message}
+                </p>
+            )}
 
             <p className="authentication-form__note">
                 Already have an account?{" "}
-                <span onClick={() => switchFunction('login')}>Sign in!</span>
+                <span onClick={() => switchFunction("login")}>
+                    Sign in!
+                </span>
             </p>
 
-            <button type="submit" className="authentication-form__submit">
+            <button
+                type="submit"
+                className="authentication-form__submit"
+                disabled={isSubmitting}
+            >
                 Register
             </button>
         </form>

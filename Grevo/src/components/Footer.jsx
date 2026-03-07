@@ -37,13 +37,13 @@ function Footer() {
                     <div className="links__info-and-media">
                         <ul className="links__info">
                             <li>
-                                <Link to="/specials">
+                                <Link to="/chefs-special">
                                     Chef’s Specials
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/gift-cards">
-                                    Gift Cards
+                                <Link to="/sourcing">
+                                    Local Sourcing
                                 </Link>
                             </li>
                             <li>

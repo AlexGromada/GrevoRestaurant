@@ -41,7 +41,7 @@ export const login = createAsyncThunk(
         const data = await res.json();
 
         if (!res.ok) {
-            throw new Error(data.message || "Login failed");
+            return thunkAPI.rejectWithValue(data.message || "Login failed");
         }
 
         localStorage.setItem("token", data.token);
@@ -52,41 +52,44 @@ export const login = createAsyncThunk(
 export const register = createAsyncThunk(
     "auth/register",
     async ({ email, password }, thunkAPI) => {
-        const res = await fetch(
-            "https://grevo-server.onrender.com/auth/register",
-            {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email, password }),
+        try {
+            const res = await fetch(
+                "https://grevo-server.onrender.com/auth/register",
+                {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ email, password }),
+                }
+            );
+
+            const data = await res.json();
+
+            if (!res.ok) {
+                return thunkAPI.rejectWithValue(data.message || "Registration failed");
             }
-        );
 
-        const data = await res.json();
+            const loginRes = await fetch(
+                "https://grevo-server.onrender.com/auth/login",
+                {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ email, password }),
+                }
+            );
 
-        if (!res.ok || !data.success) {
-            throw new Error(data.message || "Registration failed");
-        }
+            const loginData = await loginRes.json();
 
-        const loginRes = await fetch(
-            "https://grevo-server.onrender.com/auth/login",
-            {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email, password }),
+            if (!loginRes.ok) {
+                return thunkAPI.rejectWithValue("Login after registration failed");
             }
-        );
 
-        const loginData = await loginRes.json();
-
-        if (!loginRes.ok) {
-            throw new Error("Login after registration failed");
+            localStorage.setItem("token", loginData.token);
+            return loginData.user;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error.message || "Network error");
         }
-
-        localStorage.setItem("token", loginData.token);
-        return loginData.user;
     }
 );
-
 
 const authSlice = createSlice({
     name: "auth",
@@ -128,7 +131,12 @@ const authSlice = createSlice({
             .addCase(login.rejected, (state, action) => {
                 state.user = null;
                 state.loading = false;
-                state.error = action.error.message;
+                state.error = action.payload || action.error.message;
+            })
+            .addCase(register.fulfilled, (state, action) => {
+                state.user = action.payload;
+                state.loading = false;
+                state.error = null;
             });
     },
 });

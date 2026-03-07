@@ -1,30 +1,46 @@
-import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../store/slices/authSlice";
 import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 function LoginForm({ switchFunction, isVisible }) {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
-    const navigate = useNavigate();
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setError("");
+    const {
+        register,
+        handleSubmit,
+        setError,
+        formState: { errors, isSubmitting },
+    } = useForm({
+        mode: "onSubmit",
+    });
 
+    const onSubmit = async (data) => {
         try {
-            await dispatch(login({ email, password })).unwrap();
+            await dispatch(
+                login({
+                    email: data.email,
+                    password: data.password,
+                })
+            ).unwrap();
+
             navigate("/profile");
         } catch (err) {
-            setError(err.message || "Email or password is incorrect");
+            setError("root", {
+                message: err || "Email or password is incorrect",
+            });
         }
     };
 
+    const firstError = errors.email || errors.password || errors.root;
 
     return (
-        <form className="authentication-form" onSubmit={handleSubmit} style={{ display: isVisible ? "flex" : "none" }}>
+        <form
+            className="authentication-form"
+            onSubmit={handleSubmit(onSubmit)}
+            style={{ display: isVisible ? "flex" : "none" }}
+        >
             <h3 className="authentication-form__title">Sign In</h3>
 
             <label className="authentication-form__label">
@@ -32,11 +48,14 @@ function LoginForm({ switchFunction, isVisible }) {
                 <input
                     className="authentication-form__input"
                     type="email"
-                    name="email"
                     placeholder="Enter your email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
+                    {...register("email", {
+                        required: "Please enter your email",
+                        pattern: {
+                            value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                            message: "Enter a valid email address",
+                        },
+                    })}
                 />
             </label>
 
@@ -45,21 +64,31 @@ function LoginForm({ switchFunction, isVisible }) {
                 <input
                     className="authentication-form__input"
                     type="password"
-                    name="password"
                     placeholder="Enter your password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
+                    {...register("password", {
+                        required: "Please enter your password",
+                    })}
                 />
             </label>
 
-            {error && <p className="authentication-form__error">{error}</p>}
+            {firstError && (
+                <p className="authentication-form__error">
+                    {firstError.message}
+                </p>
+            )}
 
             <p className="authentication-form__note">
-                Don't have an account? <span onClick={() => switchFunction("register")}>Create one!</span>
+                Don't have an account?{" "}
+                <span onClick={() => switchFunction("register")}>
+                    Create one!
+                </span>
             </p>
 
-            <button type="submit" className="authentication-form__submit">
+            <button
+                type="submit"
+                className="authentication-form__submit"
+                disabled={isSubmitting}
+            >
                 Login
             </button>
         </form>

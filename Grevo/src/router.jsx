@@ -9,6 +9,11 @@ import AboutUs from "./pages/AboutUs.jsx";
 import UserProfile from "./pages/UserProfile.jsx";
 import AuthenticationPage from "./pages/AuthenticationPage.jsx";
 import Cart from "./pages/Cart.jsx";
+import ChefsSpecial from "./pages/ChefsSpecial.jsx";
+import Sourcing from "./pages/Sourcing.jsx"
+import Events from "./pages/Events.jsx"
+import FAQ from "./pages/FAQ.jsx"
+
 
 export default createBrowserRouter([
     {
@@ -47,4 +52,20 @@ export default createBrowserRouter([
         path: "/cart",
         element: <Cart />,
     },
+    {
+        path: "/chefs-special",
+        element: <ChefsSpecial />,
+    },
+    {
+        path: "/sourcing",
+        element: <Sourcing />,
+    },
+    {
+        path: "/events",
+        element: <Events />,
+    },
+    {
+        path: "/faq",
+        element: <FAQ />,
+    }
 ]);

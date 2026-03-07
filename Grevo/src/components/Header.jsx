@@ -47,7 +47,7 @@ function Header() {
                 </div>
                 <div className="user-data">
                     <NavLink
-                        to="/cart">
+                        to={user ? "/cart" : "/authentication"}>
                         {({ isActive }) => (
                             <img src={isActive ? CartActive : Cart} alt="Cart" />
                         )}

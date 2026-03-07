@@ -1,0 +1,140 @@
+@use "../common/breakpoints" as *;
+@use "../common/variables" as *;
+@use "../common/fonts" as *;
+@use "../common/common" as *;
+
+.chefs-special-main {
+    background: $main-bg;
+    color: #fff;
+    
+    .content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px 40px 80px 40px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .special-header {
+        text-align: center;
+        margin-bottom: 40px;
+
+        &__title {
+            @include font-hero;
+            margin: 0 0 10px 0;
+        }
+
+        &__subtitle {
+            @include font-h4;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+            font-weight: normal;
+        }
+    }
+
+    .special-hero-img {
+        width: 100%;
+        height: auto;
+        max-height: 500px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 50px;
+        border: 2px solid $main-alt-bg;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .special-details {
+        display: flex;
+        flex-direction: column;
+
+        &__name {
+            @include font-h2;
+            margin: 0 0 20px 0;
+            color: $accent;
+            text-align: center;
+        }
+
+        &__story {
+            @include font-text;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 40px;
+            text-align: justify;
+        }
+    }
+
+    .special-ingredients {
+        background: rgba($secondary-alt-bg, 0.3);
+        padding: 40px;
+        border-radius: 12px;
+        border-left: 4px solid $accent;
+        margin-bottom: 50px;
+
+        h3 {
+            @include font-h3;
+            margin: 0 0 20px 0;
+        }
+
+        ul {
+            @include font-text;
+            color: rgba(255, 255, 255, 0.9);
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                margin-bottom: 12px;
+                padding-left: 24px;
+                position: relative;
+
+                &::before {
+                    content: "•";
+                    color: $accent;
+                    position: absolute;
+                    left: 0;
+                    font-size: 1.2em;
+                    line-height: 1;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .special-cta {
+        @include font-text;
+        background: $accent;
+        color: $main-bg;
+        font-weight: bold;
+        padding: 18px 32px;
+        box-sizing: border-box;
+        border-radius: 8px;
+        text-decoration: none;
+        text-align: center;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        align-self: center;
+        width: 100%;
+        max-width: 300px;
+
+        &:hover {
+            filter: brightness(1.1);
+            transform: translateY(-2px);
+        }
+    }
+}
+
+@include respond($bp-md) {
+    .chefs-special-main .content {
+
+        .special-hero-img {
+            max-height: 300px;
+            margin-bottom: 30px;
+        }
+        
+        .special-ingredients {
+            padding: 24px;
+        }
+    }
+}

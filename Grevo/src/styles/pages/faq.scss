@@ -1,0 +1,96 @@
+@use "../common/breakpoints" as *;
+@use "../common/variables" as *;
+@use "../common/fonts" as *;
+@use "../common/common" as *;
+
+.faq-main {
+    background: $main-bg;
+    color: #fff;
+
+    .content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px 20px 80px 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .faq-header {
+        text-align: center;
+        margin-bottom: 60px;
+
+        &__title {
+            @include font-hero;
+            margin: 0 0 10px 0;
+        }
+
+        &__subtitle {
+            @include font-h4;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+        }
+    }
+
+    .faq-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .faq-item {
+        background: rgba($secondary-alt-bg, 0.2);
+        padding: 30px;
+        border-radius: 12px;
+        border: 1px solid $main-alt-bg;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background: rgba($secondary-alt-bg, 0.3);
+        }
+
+        &__question {
+            @include font-h3;
+            color: $accent;
+            margin: 0 0 15px 0;
+            font-size: 1.25rem;
+        }
+
+        &__answer {
+            @include font-text;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin: 0;
+        }
+    }
+
+    .faq-footer {
+        margin-top: 60px;
+        text-align: center;
+        @include font-text;
+        color: rgba(255, 255, 255, 0.6);
+
+        p { margin-bottom: 10px; }
+
+        .faq-contact-link {
+            color: $accent;
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+
+            &:hover {
+                border-color: $accent;
+            }
+        }
+    }
+}
+
+@include respond($bp-md) {
+    .faq-main .content {
+        padding-top: 20px;
+        
+        .faq-item {
+            padding: 20px;
+        }
+    }
+}

@@ -1,0 +1,111 @@
+@use "../common/breakpoints" as *;
+@use "../common/variables" as *;
+@use "../common/fonts" as *;
+@use "../common/common" as *;
+
+.sourcing-main {
+    background: $main-bg;
+    color: #fff;
+    
+    .content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px 20px 80px 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sourcing-header {
+        text-align: center;
+        margin-bottom: 30px;
+
+        &__title {
+            @include font-hero;
+            margin: 0 0 10px 0;
+        }
+
+        &__subtitle {
+            @include font-h4;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+            font-weight: normal;
+        }
+    }
+
+    .sourcing-hero-img {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 40px;
+        border: 1px solid $main-alt-bg;
+    }
+
+    .sourcing-intro {
+        @include font-text;
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.8;
+        margin-bottom: 50px;
+        text-align: center;
+        padding-bottom: 40px;
+        border-bottom: 1px dashed $main-alt-bg;
+    }
+
+    .partner-list {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .partner-card {
+        background: rgba($secondary-alt-bg, 0.2);
+        padding: 30px;
+        border-radius: 8px;
+        border-left: 3px solid $accent;
+        transition: transform 0.2s ease, background-color 0.3s ease;
+
+        &:hover {
+            background: rgba($secondary-alt-bg, 0.4);
+            transform: translateX(5px);
+        }
+
+        &__name {
+            @include font-h3;
+            margin: 0 0 5px 0;
+        }
+
+        &__role {
+            @include font-small-text;
+            color: $accent;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        &__desc {
+            @include font-text;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            margin: 0;
+        }
+    }
+}
+
+@include respond($bp-md) {
+    .sourcing-main .content {
+        .sourcing-hero-img {
+            max-height: 250px;
+        }
+
+        .partner-card {
+            padding: 20px;
+            
+            &:hover {
+                transform: none;
+            }
+        }
+    }
+}
